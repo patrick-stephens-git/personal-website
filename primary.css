@@ -1,2 +1,5 @@
-body { font-family: "Palatino", "Times New Roman", serif; }
-img { width: 100%; height: auto; }
+body { 
+  font-family: "Palatino", "Times New Roman", serif; 
+  background-color: powderblue;
+}
+img { max-width: 100%; height: auto; }
