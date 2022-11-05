@@ -18,4 +18,4 @@ Sitemap: https://patrick-stephens-git.github.io/sitemap.xml
     | ||_____________|| |
     |_| \___________/ |_|
     / \      | |      / \
-   /___\    /___\SSt /___\
+   /___\    /___\    /___\
