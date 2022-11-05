@@ -1,4 +1,21 @@
 User-agent: *
 Disallow: /
 
-Sitemap: http://www.example.com/sitemap.xml
+Sitemap: https://patrick-stephens-git.github.io/sitemap.xml
+
+             ___
+          ,-'___'-.
+        ,'  [(_)]  '.
+       |_]||[][O]o[][|
+     _ |_____________| _
+    | []   _______   [] |
+    | []   _______   [] |
+   [| ||      _      || |]
+    |_|| =   [=]     ||_|
+    | || =   [|]     || |
+    | ||      _      || |
+    | ||||   (+)    (|| |
+    | ||_____________|| |
+    |_| \___________/ |_|
+    / \      | |      / \
+   /___\    /___\SSt /___\
