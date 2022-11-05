@@ -1,7 +1,2 @@
-html, body, .page-width-wrapper { min-height: 100%; }
-header { float: left; width: 220px; padding-right: 30px; text-align: right; }
-main { margin-left: 220px; padding-left: 30px; }
-.body-wrapper { border: 2px solid hsl(0, 0%, 85%); }
-h1, h2, h3 { font-family: "Lucida Grande", "Helvetica", "Arial", sans-serif; }
 body { font-family: "Palatino", "Times New Roman", serif; }
 img { width: 100%; height: auto; }
