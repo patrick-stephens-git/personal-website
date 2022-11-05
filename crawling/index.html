@@ -12,10 +12,30 @@
   		</section>
   	</header>
   	<section class="intro">
-  		<p>Crawling...</p><br>
+  		<p>
+        You need to be in the race in order to compete.<br>
+        Googlebot requests a page URL (use BeautifulSoup to show an example) then produces protocol buffer (similar to JSON). This protocol buffer will then be used for indexing.
+      </p><br>
   	</section><br>
   	<section class="content">
-  		<p>Content on Crawling</p>
+  		<h2>Where does Googlebot get a page URL to request?</h2>
+      <ul>
+        <li>Internal Links</li>
+        <li>External Links</li>
+        <li>XML Sitemaps</li>
+        <li>RSS / Atom Feeds</li>
+        <li>Unlinked URLs</li>
+        <li>???</li>
+      </ul>
+      <h2>What stops a URL from reaching the indexing step?</h2>
+      <h3>Robots.txt Disallow Crawls</h3>
+      <h3>HTTP Status Codes != 200</h3>
+      <ul>
+        <li>Soft-404</li>
+        <li>301 & 302</li>
+        <li>4xx</li>
+        <li>5xx & 429</li>
+      </ul>
   	</section>
 	<section class="contact">
 		<h2>Contact</a></h2>
