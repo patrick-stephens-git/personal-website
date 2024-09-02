@@ -4,6 +4,8 @@ Disallow: /page-template.html
 User-agent: AdsBot-Google
 Disallow: /
 
+Sitemap: https://patrickcstephens.com/sitemap.xml
+
              ___
           ,-'___'-.
         ,'  [(_)]  '.
