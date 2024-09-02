@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+
+    <link rel="stylesheet" href="/resources/styles/global.css">
+    <base href="/" target="_blank"> 
+
+    <!-- Head Elements: https://www.w3schools.com/html/html_head.asp -->
+    <meta charset="UTF-8"> <!-- Define the character set used -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="Patrick Stephens">
+
+    <!-- Page Content Scripts -->
+    <script src="resources/js/global-nav.js"></script>
+    <script src="resources/js/global-sidebar.js"></script>
+    <script src="resources/js/global-footer.js"></script>
+</head>
+<body>
+    <header>
+        <div class="global-nav-container" id="global-nav-container">
+        <!-- global-nav.js will execute here -->
+        </div>
+    </header>
+    <main>
+        <div class="main-content-container">
+            <div class="content">
+                <h1>Search Engine System Design</h1>
+                <h2>1. Data Collection: structured or unstructured</h2>
+                <p>Data collection can include:</p>
+                <ul>
+                    <li>- web crawlers</li>
+                    <li>- user inputs</li>
+                    <li>- APIs</li>
+                    <li>- external databases</li>
+                </ul>
+                <h2>2. Indexing: create a document object</h2>
+                <p>Break down the document into more manageable parts. Identify key elements. Create a structured representation using unstructured data. The goal is to match the most relevant documents to the query.</p>
+                <p>Document object can include:</p>
+                <ul>
+                    <li>- document classification / category mapping</li>
+                    <li>- document annotation / tagging</li>
+                    <li>- document rewriting</li>
+                    <li>- document moderation</li>
+                    <li>- document-independent ranking features / signals</li>
+                </ul>
+                <h2>3. Query Parser: create a query object</h2>
+                <p>Break down the query into its components. Analyze the meaning behind the words. Determine the user's intent. The goal is to match the query to the most relevant documents.</p>
+                <p>Query object can include:</p>
+                <ul>
+                    <li>- query classification / category mapping</li>
+                    <li>- query scoping / tagging</li>
+                    <li>- query rewriting</li>
+                    <li>- query-independent ranking features / signals</li>
+                </ul>
+                <h2>4. Personalization Engine: create a user object</h2>
+                <p>Analyze patterns in user behavior. Consider past interactions. Predict what a user might be looking for. The goal is to match the user to the most relevant documents.</p>
+                <p>User object can include:</p>
+                <ul>
+                    <li>- user classification / category mapping</li>
+                    <li>- user annotation / tagging</li>
+                    <li>- user-independent ranking features / signals</li>
+                </ul>
+                <h2>5. Information Retrieval (IR): match queries to documents</h2>
+                <p>Pull relevant documents using the document objects and query object as inputs to a relevance function. The goal is to put together an initial ranked list of the most relevant documents.</p>
+                <p>IR can include:</p>
+                <ul>
+                    <li>- text based retrieval</li>
+                    <li>- embedding based retrieval</li>
+                </ul>
+                <h2>6. Ranking: order matched documents by relevance</h2>
+                <p>Predict a relevance score using features for each query|document pair as inputs to a ranking model. Sort those documents according to their scores. The goal is to order the documents so that the most relevant documents are shown at the top of the list.</p>
+                <p>Ranking includes:</p>
+                <ul>
+                    <li>- ranking features: query-independent, document-independent, query-dependent</li>
+                    <li>- ranking model</li>
+                </ul>
+                <h2>7. User Interface (UI): display the search results to the user</h2>
+                <p></p>
+                <p>UI can include:</p>
+                <ul>
+                    <li>- title</li>
+                    <li>- description</li>
+                    <li>- sitelinks</li>
+                    <li>- badges / labels</li>
+                    <li>- reviews / ratings</li>
+                </ul>
+            </div>
+            <div class="responsive-main-content-sidebar-divider"></div>
+        </div>
+        <div class="global-sidebar-container" id="global-sidebar-container">
+            <!-- global-sidebar.js will execute here -->
+        </div>
+    </main>
+    <footer>
+        <div class="global-footer-container" id="global-footer-container">
+            <!-- global-footer.js will execute here -->
+        </div>
+    </footer>
+</div>
+</body>
+</html>

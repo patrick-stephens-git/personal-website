@@ -1,0 +1,208 @@
+/* ************************************************************ */
+/* Grid Container */
+
+body {
+    max-width: 960px; /* Responsive */
+
+    /* ************* */
+    /* Grid Settings */
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas: 
+        "global-nav-container"
+        "main-content-container"
+        "global-footer-container";
+
+    /* ************* */
+    /* Box Settings */
+    /* Box Model: margin, border, padding, <content> */
+    /* setting: top | right | bottom | left */
+    margin-left: auto; /* center content */
+    margin-right: auto; /* center content */
+    /* border: 2px solid rgb(255, 0, 0); */
+    padding: 0 10px 0 10px;
+    
+    /* ************* */
+    /* Page Settings */
+    background-color: #F0F0F0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333333; /* text color */
+}
+
+/* ************************************************************ */
+/* Grid Items */
+
+.global-nav-container {
+    grid-area: global-nav-container;
+    margin: 2px;
+    padding: 0 10px 0 10px;
+}
+
+main {
+    /* ************* */
+    /* Grid Settings */
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas: 
+        "main-content-container main-content-container main-content-container main-content-container global-sidebar-container";
+
+    margin: 2px;
+    padding: 0 10px 0 10px;
+}
+
+.main-content-container {
+    grid-area: main-content-container;
+    padding: 0 10px 0 0;
+}
+
+.main-content-divider {
+    margin: 15px 0 0 0;
+    border: 1px solid #bcbcbc;
+}
+
+.responsive-main-content-sidebar-divider {
+    display: none;
+}
+
+.global-sidebar-container {
+    grid-area: global-sidebar-container;
+    padding: 0 0 0 10px;
+}
+
+.global-footer-container {
+    grid-area: global-footer-container;
+    text-align: center;
+    margin: 10px 10px 0 10px;
+    padding: 5px 0 5px 0;
+    background-color: #FFD27F;
+}
+
+/* ************************************************************ */
+/* Text */
+
+h1, h2 {
+    font-size: 1.2em;
+}
+
+h3 {
+    font-size: 1em;
+}
+
+h4 {
+    font-size: 0.95em;
+}
+
+p {
+    font-size: 0.95em;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.global-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+}
+
+li {
+    font-size: 0.96em;
+    margin: 0 0 4px 0;
+}
+
+.global-nav li {
+    margin: 0 10px 0 0; 
+}
+
+/* ************************************************************ */
+/* Images */
+
+.profile-image {
+    max-width: 100%;
+    height: auto;
+    float: left;
+    margin: 0 10px 10px 0;
+    border: 2px solid #bcbcbc;
+    padding: 2px;
+}
+
+.product-image {
+    max-width: 480px;
+    height: auto;
+    display: block; /* block = starts on a new and takes up the whole width of the page */
+    margin: 10px auto 10px auto;
+    border: 2px solid #bcbcbc;
+    /* padding: 2px; */
+}
+
+.main-content-image {
+    max-width: 480px;
+    height: auto;
+    display: block; /* block = starts on a new and takes up the whole width of the page */
+    margin: 10px auto 10px auto;
+    border: 2px solid #bcbcbc;
+    padding: 2px;
+}
+
+/* ************************************************************ */
+/* ************************************************************ */
+
+/* Responsive: Tablet */
+@media (max-width: 768px) {
+    main {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);;
+        grid-template-areas: 
+            "main-content-container"
+            "global-sidebar-container";
+    }
+
+    .main-content-container {
+        grid-area: main-content-container;
+        padding: 0;
+    }
+
+    .responsive-main-content-sidebar-divider {
+        display: block;
+        margin: 15px 0 0 0;
+        border: 1px solid #bcbcbc;
+    }
+    
+    .global-sidebar-container {
+        grid-area: global-sidebar-container;
+        padding: 0;
+    }
+
+}
+/* ************************************************************ */
+/* ************************************************************ */
+
+/* Responsive: Mobile Phone */
+@media (max-width: 480px) {
+    body {
+        font-size: 90%;
+        margin: 10px 10px 0 10px;
+    }
+
+    .global-footer-container {
+        margin: 10px 10px 15px 10px;
+    }
+
+    .profile-image {
+        width: 125px; 
+        height: auto; 
+        float: right;
+        margin: 0 0 10px 10px;
+        transform: scaleX(-1);
+    }
+
+    .product-image {
+        width: 95%;
+    }
+}
