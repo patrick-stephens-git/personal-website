@@ -74,10 +74,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // ************************************************
     // ************************************************
-    // Search System Links
+    // Other Links
     // create <h2></h2> element
     const h2c = document.createElement('h2');
-    h2c.textContent = 'Other';
+    h2c.textContent = 'Other Notes';
 
     // create <ul></ul> element
     const ulc = document.createElement('ul');
@@ -100,6 +100,33 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // ************************************************
     // ************************************************
+    // Tools Links
+    // create <h2></h2> element
+    const h2d = document.createElement('h2');
+    h2d.textContent = 'Tools';
+
+    // create <ul></ul> element
+    const uld = document.createElement('ul');
+
+    // links
+    const links_d = [
+        { text: 'mapping incorrect|correct spelling pairs', url: 'https://github.com/patrick-stephens-git/data-mining-tools/tree/main/spelling-error-to-keyword-pairs-generator', target: '_blank' },
+        { text: 'mapping query|acronym spelling pairs', url: 'https://github.com/patrick-stephens-git/data-mining-tools/tree/main/query-refinements-to-keyword-acronym-pairs-generator', target: '_blank' }
+    ];
+
+    // for loop to create sidebar links as <li> elements
+    links_d.forEach(link => {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = link.url;
+        a.textContent = link.text;
+        a.target = link.target;
+        li.appendChild(a);
+        uld.appendChild(li);
+    });
+
+    // ************************************************
+    // ************************************************
     // append elements to sidebar: <h2> and <ul>
     sidebarBar.appendChild(h2a);
     sidebarBar.appendChild(ula);
@@ -109,6 +136,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     sidebarBar.appendChild(h2c);
     sidebarBar.appendChild(ulc);
+
+    sidebarBar.appendChild(h2d);
+    sidebarBar.appendChild(uld);
 
     // add <sidebar> within the <div class="global-sidebar-container"> element
     const container = document.getElementById('global-sidebar-container');
