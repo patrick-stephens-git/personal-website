@@ -5,7 +5,8 @@ document.addEventListener('DOMContentLoaded', function() {
         { text: 'Notes', url: '/posts', target: '_self' },
         { text: 'LinkedIn', url: 'https://www.linkedin.com/in/patrickcstephens/', target: '_blank' },
         { text: 'Git', url: 'https://github.com/patrick-stephens-git', target: '_blank' },
-        { text: 'SoundCloud', url: 'https://soundcloud.com/user-579514550', target: '_blank' }
+        { text: 'SoundCloud', url: 'https://soundcloud.com/user-579514550', target: '_blank' },
+        { text: 'Contact', url: 'mailto:patrickcstephens@me.com?subject=Reaching%20out%20from%20patrickcstephens.com', target: '_self' } 
     ];
 
     // create <nav></nav> element
