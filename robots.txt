@@ -1,5 +1,5 @@
 User-agent: *
-Allow: /
+Disallow: /page-template.html
 
 User-agent: AdsBot-Google
 Disallow: /
