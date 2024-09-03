@@ -128,14 +128,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // ************************************************
     // ************************************************
     // append elements to sidebar: <h2> and <ul>
-    sidebarBar.appendChild(h2a);
-    sidebarBar.appendChild(ula);
+    // sidebarBar.appendChild(h2a);
+    // sidebarBar.appendChild(ula);
 
-    sidebarBar.appendChild(h2b);
-    sidebarBar.appendChild(ulb);
+    // sidebarBar.appendChild(h2b);
+    // sidebarBar.appendChild(ulb);
 
-    sidebarBar.appendChild(h2c);
-    sidebarBar.appendChild(ulc);
+    // sidebarBar.appendChild(h2c);
+    // sidebarBar.appendChild(ulc);
 
     sidebarBar.appendChild(h2d);
     sidebarBar.appendChild(uld);

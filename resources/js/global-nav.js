@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Nav
     const links = [
         { text: 'Home', url: '/', target: '_self' },
-        { text: 'Notes', url: '/notes', target: '_self' },
+        // { text: 'Notes', url: '/notes', target: '_self' },
         { text: 'LinkedIn', url: 'https://www.linkedin.com/in/patrickcstephens/', target: '_blank' },
         { text: 'Git', url: 'https://github.com/patrick-stephens-git', target: '_blank' },
         { text: 'SoundCloud', url: 'https://soundcloud.com/user-579514550', target: '_blank' },
