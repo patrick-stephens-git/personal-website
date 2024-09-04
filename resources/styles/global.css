@@ -83,19 +83,19 @@ main {
 /* Text */
 
 h1, h2 {
-    font-size: 1.2em;
+    font-size: 1.1em;
 }
 
 h3 {
-    font-size: 1em;
+    font-size: 1.025em;
 }
 
 h4 {
-    font-size: 0.95em;
+    font-size: 1em;
 }
 
 p {
-    font-size: 0.95em;
+    font-size: 1em;
 }
 
 ul {
@@ -112,7 +112,7 @@ ul {
 }
 
 li {
-    font-size: 0.96em;
+    font-size: 1em;
     margin: 0 0 4px 0;
 }
 
