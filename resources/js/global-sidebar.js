@@ -15,8 +15,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // links
     const links_a = [
-        { text: 'product strategy', url: '/posts/product-strategy.html', target: '_self' } //,
-        // { text: 'search from a product perspective', url: '/posts/search-from-a-product-perspective.html', target: '_self' },
+        { text: 'product strategy', url: '/posts/product-strategy.html', target: '_self' },
+        { text: 'assumption validation', url: '/posts/assumption-validation.html', target: '_self' } //,
         // { text: 'understanding users', url: 'https://docs.google.com/document/d/1T_OP7Fo59u6OJlR25AxuSiWjV2oc6vY6UdvzS7B48aA/edit#heading=h.tgp3vpvgg2nv', target: '_blank' },
         // { text: 'surfacing problems', url: 'https://docs.google.com/document/d/1T_OP7Fo59u6OJlR25AxuSiWjV2oc6vY6UdvzS7B48aA/edit#heading=h.32ulggd979n', target: '_blank' },
         // { text: 'testing assumptions', url: 'https://docs.google.com/document/d/1T_OP7Fo59u6OJlR25AxuSiWjV2oc6vY6UdvzS7B48aA/edit#heading=h.8au30ko8im4k', target: '_blank' },
