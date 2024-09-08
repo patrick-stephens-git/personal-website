@@ -6,9 +6,9 @@ document.addEventListener('DOMContentLoaded', function() {
   
     // create header
     const h2 = document.createElement('h2');
-    h2.textContent = 'Do you agree? Do you disagree? Am I missing anything?';
+    h2.textContent = 'What are your thoughts on this topic?';
     // create string
-    const textNode = document.createTextNode("I'm always looking to learn something new. Contact me to let me know your thoughts about this topic, I'd love to hear your ideas.");
+    const textNode = document.createTextNode("I'm always looking to learn something new and see other perspectives. Contact me to let me know your thoughts about this topic.");
   
     // append string
     feedbackRequest.appendChild(h2);
