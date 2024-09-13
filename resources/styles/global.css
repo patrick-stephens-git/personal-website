@@ -60,6 +60,7 @@ main {
 .example-content-container {
     padding: 20px 20px 20px 20px;
     background-color: #dbdbdb;
+    border-radius: 5px;
 }
 
 .main-content-divider {
@@ -106,6 +107,7 @@ p {
 pre {
     margin: 0;
     padding: 0;
+    white-space: pre-wrap;
 }
 
 code {
