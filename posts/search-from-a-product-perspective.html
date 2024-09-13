@@ -106,7 +106,32 @@
                 </div>
                 <p>User understanding has different use cases depending on the user type, document type, and query type. Make your documents searchable by knowing your users and what information they provide.</p>
                 <h2>How do you retrieve relevant results?</h2>
-                <p>Using the information you've learned above you can build a query to match against documents. If you know that your user has python skills and searches for "remote swe" then the query to retrieve documents could be:</p>
+                <p>Using the information you've learned above you can build a query to match against documents.</p>
+                <p>You may have a job posting document for a "Software Engineer" that looks like this:</p>
+                <div class="example-content-container">
+                    <pre><code>{
+"job_title": "Software Engineer",
+"company_name": "Patpatpat Inc.",
+"job_description": "We are looking for a Software Engineer to join our team, working on building scalable web applications. Candidates should have experience with python, java, and agile methodologies.",
+"job_category": "engineering",
+"job_industry": "technology",
+"job_type": "full-time",
+"experience_level": "mid-level",
+"location_type": "remote",
+"location": {
+    "city": "Austin",
+    "state": "TX",
+    "country": "USA"
+},
+"skills": ["python", "java", "agile methodologies"],
+"size": "medium-sized company",
+"salary_range": "high",
+"benefits": ["health insurance", "401k match", "relocation assistance"],
+"post_date": "2024-07-01",
+"application_deadline": "2024-08-01"
+}</code></pre>
+                                    </div>
+                <p>If you know that your user has python skills and searches for "remote swe" then the query to retrieve documents could be:</p>
                 <div class="example-content-container">
 <pre><code>{
     "query": {
@@ -147,7 +172,7 @@
     ]
     }</code></pre>
                 </div>
-                <p>This query represents the user intent. Using this query you'll retrieve a list of documents ordered by relevance.</p>
+                <p>This query represents the user intent. Using this query you'll retrieve a list of documents (similar to the one shown above) ordered by relevance.</p>
                 <h2>How do you rank the results by relevance?</h2>
                 <p>Using the list of documents you've retrieved you can rerank them so the most relevant documents are at the top. If your user searches for "product manager jobs in austin tx" they may want to find a popular job that other users have already applied to. We can rank the documents with a ranking model that predicts a relevance score using features from our documents, the user's query, and the relation between them.</p>
                 <p>Solve search problems by first understanding your documents, queries, and users. Then optimize your search results with retrieval and ranking.</p>
