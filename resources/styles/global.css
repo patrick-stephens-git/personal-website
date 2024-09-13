@@ -103,6 +103,16 @@ p {
     font-size: 1em;
 }
 
+pre {
+    margin: 0;
+    padding: 0;
+}
+
+code {
+    margin: 0;
+    padding: 0;
+}
+
 ul {
     margin: 0;
     padding: 0;
