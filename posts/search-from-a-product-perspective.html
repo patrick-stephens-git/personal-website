@@ -40,70 +40,76 @@
         <div class="main-content-container">
             <div class="content">
                 <h1>Search from a Product Perspective</h1>
-                <p>What is the problem you're trying to solve? The core of search is helping your users find something. What does your business offer your users and how do they search for it? If your business offers audiobooks then your users might search using titles, author names, or categories. If your business offers job postings then they might search using job titles, company names, or skills. Surface relevant search results by using your documents, queries, and user data.</p>
+                <p>What is the problem you're trying to solve? The core of search is helping your users find <i>something</i>. What does your business offer your users? How do your users search for it? Who are your users? Understanding links between documents, queries, and users is key to solving search problems.</p>
                 <h2>What can you learn from your documents?</h2>
-                <p>If your documents are audiobooks then they might contain the book title, author, or a transcript of the audio. If the documents are job postings then they might contain the job title, hiring company, or job description. The document may contain a language field or you may need to infer the language using the document text. You can use this information to surface relevant documents to your users.</p>
+                <p></p>
+                <p>Spend time understanding the documents that represent what your business offers your users. If the documents are job postings then they might contain the job title, company name, or job description. You can use this information to surface relevant documents to your users.</p>
                 <p>You can classify your documents to match user needs:</p>
                 <div class="example-content-container">
                     <ul>
-                        <li>- If your documents are movies then your users may search by genre: mystery, romance, or horror.</li>
-                        <li>- If your documents are restaurants then your users may search by type of food: pizza, tacos, vegan.</li>
-                        <li>- If your documents are images then your users may not want to see adult content.</li>
-                        <li>- If your documents are user generated content then your users may not want to see low quality content.</li>
+                        <li>- Job category: engineering, marketing</li>
+                        <li>- Job industry: finance, healthcare</li>
+                        <li>- Job type: full-time, part-time, contract, intern</li>
+                        <li>- Experience level: entry-level, mid-level, senior-level</li>
+                        <li>- Location type: on-site, remote, hybrid</li>
                     </ul>
                 </div>
                 <p>You can annotate your documents to match user needs:</p>
                 <div class="example-content-container">
                     <ul>
-                        <li>- If your documents contain vehicle information then your users may want to search by color, make, or model.</li>
-                        <li>- If your documents contain contact information then your users may want to search by phone number or address.</li>
-                        <li>- If your documents are in many languages then your users that speak english may not want to see spanish content.</li>
+                        <li>- Skills: python, java, agile methodologies</li>
+                        <li>- Size: small business, medium-sized company, large enterprise</li>
+                        <li>- Salary range: low, medium, high</li>
+                        <li>- Benefits: health insurance, 401k match, relocation assistance</li>
                     </ul>
                 </div>
                 <p>Document understanding has different use cases depending on the document type, query type, and user type. Make your documents searchable by knowing what information they provide and how your users are searching for them.</p>
                 <h2>What can you learn from your users' queries?</h2>
-                <p>Know how your users are searching and what information your documents provide to surface relevant documents. If your users are searching for cars then their queries may contain colors, makes, and models. If they're searching for flights then their queries may contain intent and brand names. Maybe their query tells you they don't want certain documents in their search results. Use this information to surface relevant documents to your users.</p>
+                <p>Know how your users are searching and what information your document contains to surface relevant documents. If your users are searching for jobs then their queries may contain job titles, company names, or skills. You can use this information to surface relevant documents to your users.</p>
                 <p>You can classify your queries to match user needs:</p>
                 <div class="example-content-container">
                     <ul>
-                        <li>- If your user searches for “book southwest flight austin to denver” then they may want to buy.</li>
-                        <li>- If your user searches for “restaurants” then they may want to find a “local restaurant”.</li>
-                        <li>- If your user searches for “financial advice” then they may want to find trustworthy “finance” information.</li>
+                        <li>- The query "remote software engineer" can be classified as "location type: remote; job category: engineering"</li>
+                        <li>- The query "healthcare marketing" can be classified as "job industry: healthcare; job category: marketing"</li>
+                        <li>- The query "entry-level finance" can be classified as "experience level: entry-level; job industry: finance"</li>
                     </ul>
                 </div>
                 <p>You can annotate your queries to match user needs:</p>
                 <div class="example-content-container">
                     <ul>
-                        <li>- If your user searches for “egg free bread” then they may want to find “bread” that does not contain the ingredient “egg”.</li>
-                        <li>- If your user searches for “sundar pichai” then they may want to find information about the “ceo” of “google”.</li>
-                        <li>- If your user searches for “recently released movies” then they may want to find content that is “new”.</li>
+                        <li>- The query "product manager google" can be annotated as "product manager: job title; google: company name"</li>
+                        <li>- The query "python developer" can be annotated as "python: skill; developer: job title"</li>
+                        <li>- The query "$100,000 salary" can be annotated as "$100,000: high salary range"</li>
+                        <li>- The query "no experience jobs" can be annotated as "entry-level: experience level"</li>
                     </ul>
                 </div>
                 <p>You can rewrite your queries to match user needs:</p>
                 <div class="example-content-container">
                     <ul>
-                        <li>- If your user searches for “dress shirts for men” then they may want to find “mens dress shirts”.</li>
-                        <li>- If your user searches for “heart attack” then they may want to find information about “myocardial infarction”.</li>
-                        <li>- If your user searches for “an orange shirt” they may not want to find documents matching the word “an”.</li>
+                        <li>- The query "product management" can be rewritten as "product manager"</li>
+                        <li>- The query "swe" can be rewritten as "software engineer"</li>
+                        <li>- The query "twitter" can be rewritten as "x"</li>
+                        <li>- The query "high paying jobs" can be rewritten as "$100,000"</li>
                     </ul>
                 </div>
                 <p>Query understanding has different use cases depending on the query type, document type, and user type. Make your documents searchable by knowing how your users are searching for them and what information they provide.</p>
                 <h2>What can you learn from your users?</h2>
-                <p>Know your users and what information your documents provide to surface relevant documents. If your users engage with spanish content then they may prefer spanish documents. If they're subscribed to piano communities then they may want piano related documents. Their location may tell you that they don't want certain documents. Use this information to surface relevant documents to your users.</p>
+                <p>Understand your users. If your users are searching for job postings then they might provide their location, employment history, or salary expectations. You can use this information to surface relevant documents to your users.</p>
                 <p>You can classify your users to match their needs:</p>
                 <div class="example-content-container">
                     <ul>
-                        <li>- If your user listens to audiobooks then they may not want to see the ebook content type.</li>
-                        <li>- If your user purchases items within a price range then they may not want to see items that are outside of that price range.</li>
-                        <li>- If your male user searches for “pants” then they may not want to see pants from the female category.</li>
+                        <li>- If your user is located in Austin, TX then you can retrieve documents where "location: austin, tx"</li>
+                        <li>- If your user has no work history then you can retrieve documents where "experience level: entry-level"</li>
+                        <li>- If your users has python skills then you can retrieve documents where "skills: python"</li>
+                        <li>- If your users has employment history working in small businesses then you can retrieve documents where "size: small business"</li>
                     </ul>
                 </div>
                 <p>User understanding has different use cases depending on the user type, document type, and query type. Make your documents searchable by knowing your users and what information they provide.</p>
                 <h2>How do you retrieve relevant results?</h2>
-                <p>Using the information you've learned above you can build a query to match against documents. If a user searches for “blue honda civic” then their query could include “color:blue, make:honda, model:civic”. This query represents the user intent. Using this query you'll retrieve a list of documents ordered by relevance.</p>
+                <p>Using the information you've learned above you can build a query to match against documents. If a user searches for "remote swe" then their query could be “remote: location type; swe:job title; software engineer: job title”. This query represents the user intent. It may return documents that match "job title: software engineer; location type: remote". If your user has python skills then you may want to return documents that match "job title: software engineer; location type: remote; skills: python". Using this query you'll retrieve a list of documents ordered by relevance.</p>
                 <h2>How do you rank the results by relevance?</h2>
-                <p>Using the list of documents you've retrieved you can rerank them so the most relevant documents are at the top. If your user searches for “date night restaurants” they may want to find a popular restaurant that other users have made reservations at. We can rank the documents with a ranking model that predicts a relevance score using features from our documents, the user query, and the relation between them.</p>
-                <p>Solve search problems by understanding your documents, queries, and users. Then optimize your search results with retrieval and ranking.</p>
+                <p>Using the list of documents you've retrieved you can rerank them so the most relevant documents are at the top. If your user searches for "product manager jobs in austin tx" they may want to find a popular job that other users have already applied to. We can rank the documents with a ranking model that predicts a score using features from our documents, the user's query, and the relation between them.</p>
+                <p>Solve search problems by first understanding your documents, queries, and users. Then optimize your search results with retrieval and ranking.</p>
                 <div class="global-feedback-request-container" id="global-feedback-request-container">
                     <!-- global-feedback-request.js will execute here -->
                 </div>
