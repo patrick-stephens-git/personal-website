@@ -47,20 +47,20 @@
                 <p>You can classify your documents to match user needs:</p>
                 <div class="example-content-container">
                     <ul>
-                        <li>- Job category: engineering, marketing</li>
-                        <li>- Job industry: finance, healthcare</li>
-                        <li>- Job type: full-time, part-time, contract, intern</li>
-                        <li>- Experience level: entry-level, mid-level, senior-level</li>
-                        <li>- Location type: on-site, remote, hybrid</li>
+                        <li>- job_category: engineering, marketing</li>
+                        <li>- job_industry: finance, healthcare</li>
+                        <li>- job_type: full-time, part-time, contract, intern</li>
+                        <li>- experience_level: entry-level, mid-level, senior-level</li>
+                        <li>- location_type: on-site, remote, hybrid</li>
                     </ul>
                 </div>
                 <p>You can annotate your documents to match user needs:</p>
                 <div class="example-content-container">
                     <ul>
-                        <li>- Skills: python, java, agile methodologies</li>
-                        <li>- Size: small business, medium-sized company, large enterprise</li>
-                        <li>- Salary range: low, medium, high</li>
-                        <li>- Benefits: health insurance, 401k match, relocation assistance</li>
+                        <li>- skills: python, java, agile methodologies</li>
+                        <li>- size: small business, medium-sized company, large enterprise</li>
+                        <li>- salary_range: low, medium, high</li>
+                        <li>- benefits: health insurance, 401k match, relocation assistance</li>
                     </ul>
                 </div>
                 <p>Document understanding has different use cases depending on the document type, query type, and user type. Make your documents searchable by knowing what information they provide and how your users are searching for them.</p>
@@ -69,18 +69,18 @@
                 <p>You can classify your queries to match user needs:</p>
                 <div class="example-content-container">
                     <ul>
-                        <li>- The query "remote software engineer" can be classified as "location type: remote; job category: engineering"</li>
-                        <li>- The query "healthcare marketing" can be classified as "job industry: healthcare; job category: marketing"</li>
-                        <li>- The query "entry-level finance" can be classified as "experience level: entry-level; job industry: finance"</li>
+                        <li>- The query "remote software engineer" can be classified as "location_type: remote; job_category: engineering"</li>
+                        <li>- The query "healthcare marketing" can be classified as "job_industry: healthcare; job_category: marketing"</li>
+                        <li>- The query "entry-level finance" can be classified as "experience_level: entry-level; job_industry: finance"</li>
                     </ul>
                 </div>
                 <p>You can annotate your queries to match user needs:</p>
                 <div class="example-content-container">
                     <ul>
-                        <li>- The query "product manager google" can be annotated as "product manager: job title; google: company name"</li>
-                        <li>- The query "python developer" can be annotated as "python: skill; developer: job title"</li>
-                        <li>- The query "$100,000 salary" can be annotated as "$100,000: high salary range"</li>
-                        <li>- The query "no experience jobs" can be annotated as "entry-level: experience level"</li>
+                        <li>- The query "product manager google" can be annotated as "job_title: product manager; company_name: google"</li>
+                        <li>- The query "python developer" can be annotated as "skills: python; job_title: developer"</li>
+                        <li>- The query "$100,000 jobs" can be annotated as "salary_range: high"</li>
+                        <li>- The query "no experience jobs" can be annotated as "experience_level: entry-level"</li>
                     </ul>
                 </div>
                 <p>You can rewrite your queries to match user needs:</p>
@@ -98,8 +98,8 @@
                 <p>You can classify your users to match their needs:</p>
                 <div class="example-content-container">
                     <ul>
-                        <li>- If your user is located in Austin, TX then you can retrieve documents where "location: austin, tx"</li>
-                        <li>- If your user has no work history then you can retrieve documents where "experience level: entry-level"</li>
+                        <li>- If your user is located in Austin, TX then you can retrieve documents where "city: austin; state: tx"</li>
+                        <li>- If your user has no work history then you can retrieve documents where "experience_level: entry-level"</li>
                         <li>- If your users has python skills then you can retrieve documents where "skills: python"</li>
                         <li>- If your users has employment history working in small businesses then you can retrieve documents where "size: small business"</li>
                     </ul>
@@ -108,9 +108,7 @@
                 <h2>How do you retrieve relevant results?</h2>
                 <p>Using the information you've learned above you can build a query to match against documents. If you know that your user has python skills and searches for "remote swe" then the query to retrieve documents could be:</p>
                 <div class="example-content-container">
-                    <pre>
-                        <code>
-{
+<pre><code>{
     "query": {
         "bool": {
         "must": [
@@ -147,9 +145,7 @@
         }
         }
     ]
-    }
-                        </code>
-                    </pre>
+    }</code></pre>
                 </div>
                 <p>This query represents the user intent. Using this query you'll retrieve a list of documents ordered by relevance.</p>
                 <h2>How do you rank the results by relevance?</h2>
