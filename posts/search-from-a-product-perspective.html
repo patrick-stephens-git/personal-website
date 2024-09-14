@@ -49,7 +49,7 @@
                     <ul>
                         <li>- job_category: engineering, marketing</li>
                         <li>- job_industry: finance, healthcare</li>
-                        <li>- job_type: full-time, part-time, contract, intern</li>
+                        <li>- job_type: full-time, part-time, contract, internship</li>
                         <li>- experience_level: entry-level, mid-level, senior-level</li>
                         <li>- location_type: on-site, remote, hybrid</li>
                     </ul>
@@ -175,7 +175,41 @@
                 </div>
                 <p>This query represents the user intent. Using this query you'll retrieve a list of documents (similar to the one shown above) ordered by relevance.</p>
                 <h2>How do you rank the results by relevance?</h2>
-                <p>Using the list of documents you've retrieved you can rerank them so the most relevant documents are at the top. If your user searches for "product manager jobs in austin tx" they may want to find a popular job that other users have already applied to. We can rank the documents with a ranking model that predicts a relevance score using features from our documents, the user's query, and the relation between them.</p>
+                <p>Using the list of documents you've retrieved you can rerank them so the most relevant documents are at the top. If your user searches for "product manager jobs austin tx" they may want to find popular jobs that other users have already applied to. Your business may want to increase the visibility of job postings that are likely to lead to an apply. We can rank the documents with a ranking model that predicts a relevance score using features from the documents, query, user, and the relation between them.</p>
+
+                <p>Ranking documents relies on the user's query and its relationship to the document. We call these query-dependent features:</p>
+                <div class="example-content-container">
+                    <ul>
+                        <li>- BM25 score of the query and job posting</li>
+                        <li>- Cosine similarity between the query and job posting embeddings</li>
+                        <li>- Jaccard similarity between the query and fields of the job posting</li>
+                        <li>- Apply rate of a job posting for the query</li>
+                        <li>- Explicit feedback signals, such as a thumbs down, of a job posting for the query</li>
+                    </ul>
+                </div>
+
+                <p>Ranking documents also relies on the retrieved document itself. We call these query-independent features:</p>
+                <div class="example-content-container">
+                    <ul>
+                        <li>- Click-through rate (CTR) of the job posting</li>
+                        <li>- Total applies to the job posting</li>
+                        <li>- Creation date (freshness) of the job posting</li>
+                        <li>- Quality of the job posting</li>
+                        <li>- Brand authority of the job posting company</li>
+                        <li>- Rating of the job posting company</li>
+                    </ul>
+                </div>
+
+                <p>Ranking documents also relies on the context of the user. We call these contextual ranking features:</p>
+                <div class="example-content-container">
+                    <ul>
+                        <li>- Location of the user. If a user is based in Austin, TX then job postings in Austin, TX may rank higher.</li>
+                        <li>- Preferences of the user. If a user prefers to work remotely then job postings that are remote may rank higher.</li>
+                        <li>- Search history of the user. If a user frequently searches for "software engineer internships" then job postings with "job_type": "internship" may rank higher.</li>
+                        <li>- Engagement history of the user. If a user frequently applies to job postings with "skills": "python" and job postings with "salary_range": "high" then job postings that match both of these criteria may rank higher.</li>
+                    </ul>
+                </div>
+
                 <p>Solve search problems by first understanding your documents, queries, and users. Then optimize your search results with retrieval and ranking.</p>
                 <div class="global-feedback-request-container" id="global-feedback-request-container">
                     <!-- global-feedback-request.js will execute here -->
