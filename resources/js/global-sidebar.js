@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // links
     const links_a = [
-        { text: 'product development lifecycle', url: '/product-development-lifecycle.html', target: '_self' },
+        { text: 'product development lifecycle', url: '/posts/product-development-lifecycle.html', target: '_self' },
         { text: 'product strategy', url: '/posts/product-strategy.html', target: '_self' },
         { text: 'assumption validation', url: '/posts/assumption-validation.html', target: '_self' }
     ];
