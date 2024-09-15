@@ -15,14 +15,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // links
     const links_a = [
+        { text: 'product development lifecycle', url: '/product-development-lifecycle.html', target: '_self' },
         { text: 'product strategy', url: '/posts/product-strategy.html', target: '_self' },
-        { text: 'assumption validation', url: '/posts/assumption-validation.html', target: '_self' } //,
-        // { text: 'understanding users', url: 'https://docs.google.com/document/d/1T_OP7Fo59u6OJlR25AxuSiWjV2oc6vY6UdvzS7B48aA/edit#heading=h.tgp3vpvgg2nv', target: '_blank' },
-        // { text: 'surfacing problems', url: 'https://docs.google.com/document/d/1T_OP7Fo59u6OJlR25AxuSiWjV2oc6vY6UdvzS7B48aA/edit#heading=h.32ulggd979n', target: '_blank' },
-        // { text: 'testing assumptions', url: 'https://docs.google.com/document/d/1T_OP7Fo59u6OJlR25AxuSiWjV2oc6vY6UdvzS7B48aA/edit#heading=h.8au30ko8im4k', target: '_blank' },
-        // { text: 'go-to-market', url: 'https://docs.google.com/document/d/1T_OP7Fo59u6OJlR25AxuSiWjV2oc6vY6UdvzS7B48aA/edit#heading=h.y2000pbcl7rn', target: '_blank' },
-        // { text: 'reaching product market fit', url: 'https://docs.google.com/document/d/1T_OP7Fo59u6OJlR25AxuSiWjV2oc6vY6UdvzS7B48aA/edit#heading=h.ubsd2sgi3awg', target: '_blank' },
-        // { text: 'pivoting', url: 'https://docs.google.com/document/d/1T_OP7Fo59u6OJlR25AxuSiWjV2oc6vY6UdvzS7B48aA/edit#heading=h.f3cn1irreifc', target: '_blank' }
+        { text: 'assumption validation', url: '/posts/assumption-validation.html', target: '_self' }
     ];
 
     // for loop to create sidebar links as <li> elements
