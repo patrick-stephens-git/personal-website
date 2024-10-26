@@ -97,8 +97,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // links
     const links_d = [
-        { text: 'mapping incorrect|correct spelling pairs', url: 'https://github.com/patrick-stephens-git/data-mining-tools/tree/main/spelling-error-to-keyword-pairs-generator', target: '_blank' },
-        { text: 'mapping query|acronym pairs', url: 'https://github.com/patrick-stephens-git/data-mining-tools/tree/main/query-refinements-to-keyword-acronym-pairs-generator', target: '_blank' }
+        { text: 'mapping (incorrect|correct) spelling pairs in Python', url: 'https://github.com/patrick-stephens-git/data-mining-tools/tree/main/spelling-error-to-keyword-pairs-generator', target: '_blank' },
+        { text: 'mapping (query|acronym) pairs in Python', url: 'https://github.com/patrick-stephens-git/data-mining-tools/tree/main/query-refinements-to-keyword-acronym-pairs-generator', target: '_blank' }
     ];
 
     // for loop to create sidebar links as <li> elements
