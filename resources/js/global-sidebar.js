@@ -90,15 +90,16 @@ document.addEventListener('DOMContentLoaded', function() {
     // Tools Links
     // create <h2></h2> element
     const h2d = document.createElement('h2');
-    h2d.textContent = 'Tools';
+    h2d.textContent = 'Python Tools';
 
     // create <ul></ul> element
     const uld = document.createElement('ul');
 
     // links
     const links_d = [
-        { text: 'mapping (incorrect|correct) spelling pairs in Python', url: 'https://github.com/patrick-stephens-git/anecdotal-quantitative-evidence/tree/main/spelling-error-to-keyword-pairs-generator', target: '_blank' },
-        { text: 'mapping (query|acronym) pairs in Python', url: 'https://github.com/patrick-stephens-git/anecdotal-quantitative-evidence/tree/main/query-refinements-to-keyword-acronym-pairs-generator', target: '_blank' }
+        { text: 'word cloud generator for user feedback', url: 'https://github.com/patrick-stephens-git/anecdotal-qualitative-evidence/tree/main/word-cloud-generator', target: '_blank' },
+        { text: 'mapping (incorrect|correct) spelling pairs', url: 'https://github.com/patrick-stephens-git/anecdotal-quantitative-evidence/tree/main/spelling-error-to-keyword-pairs-generator', target: '_blank' },
+        { text: 'mapping (query|acronym) pairs', url: 'https://github.com/patrick-stephens-git/anecdotal-quantitative-evidence/tree/main/query-refinements-to-keyword-acronym-pairs-generator', target: '_blank' }
     ];
 
     // for loop to create sidebar links as <li> elements
