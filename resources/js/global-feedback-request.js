@@ -7,12 +7,22 @@ document.addEventListener('DOMContentLoaded', function() {
     // create header
     const h2 = document.createElement('h2');
     h2.textContent = 'What are your thoughts on this topic?';
+
     // create string
-    const textNode = document.createTextNode("There is often never one way to do something. I'm always looking to see a different perspective and learn something new. Contact me to let me know your thoughts about this topic.");
+    // const textNode = document.createTextNode("There is often never one way to do something. I'm always looking to see a different perspective and learn something new. Contact me to let me know your thoughts about this topic.");
+    const beforeText = document.createTextNode("There is often never one way to accomplish a goal. I'm always looking to see a different perspective and learn something new. ");
+    const afterText = document.createTextNode(" to let me know your thoughts about this topic.");
   
-    // append string
+    // create contact link
+    const contactLink = document.createElement('a');
+    contactLink.href = 'mailto:patrickcstephens@me.com';
+    contactLink.textContent = 'Contact me';
+
+    // append elements
     feedbackRequest.appendChild(h2);
-    feedbackRequest.appendChild(textNode);
+    feedbackRequest.appendChild(beforeText);
+    feedbackRequest.appendChild(contactLink);
+    feedbackRequest.appendChild(afterText);
   
     // add <div> within the <div class="global-feedback-request-container"> element
     const container = document.getElementById('global-feedback-request-container');
