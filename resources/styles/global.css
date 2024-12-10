@@ -54,7 +54,7 @@ main {
 
 .main-content-container {
     grid-area: main-content-container;
-    padding: 0 10px 0 0;
+    padding: 0 20px 0 0;
 }
 
 .example-content-container {
@@ -70,11 +70,6 @@ main {
 
 .responsive-main-content-sidebar-divider {
     display: none;
-}
-
-.global-sidebar-container {
-    grid-area: global-sidebar-container;
-    padding: 0 0 0 10px;
 }
 
 .global-footer-container {
