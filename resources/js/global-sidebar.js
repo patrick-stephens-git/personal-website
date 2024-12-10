@@ -97,9 +97,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // links
     const links_d = [
-        { text: 'word cloud generator for user feedback', url: 'https://github.com/patrick-stephens-git/anecdotal-qualitative-evidence/tree/main/word-cloud-generator', target: '_blank' },
-        { text: 'mapping (incorrect|correct) spelling pairs', url: 'https://github.com/patrick-stephens-git/anecdotal-quantitative-evidence/tree/main/spelling-error-to-keyword-pairs-generator', target: '_blank' },
-        { text: 'mapping (query|acronym) pairs', url: 'https://github.com/patrick-stephens-git/anecdotal-quantitative-evidence/tree/main/query-refinements-to-keyword-acronym-pairs-generator', target: '_blank' }
+        { text: 'word cloud generator for user feedback', url: 'https://github.com/patrick-stephens-git/qualitative-evidence/tree/main/word-cloud-generator', target: '_blank' },
+        { text: 'mapping (incorrect|correct) spelling pairs', url: 'https://github.com/patrick-stephens-git/quantitative-evidence/tree/main/spelling-error-to-keyword-pairs-generator', target: '_blank' },
+        { text: 'mapping (query|acronym) pairs', url: 'https://github.com/patrick-stephens-git/quantitative-evidence/tree/main/query-refinements-to-keyword-acronym-pairs-generator', target: '_blank' }
     ];
 
     // for loop to create sidebar links as <li> elements
