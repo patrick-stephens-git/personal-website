@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // links
     const links_a = [
         { text: 'product strategy', url: '/posts/product-strategy.html', target: '_self' },
-        { text: 'product development lifecycle', url: '/posts/product-development-lifecycle.html', target: '_self' },
         { text: 'assumption validation', url: '/posts/assumption-validation.html', target: '_self' }
     ];
 
@@ -57,32 +56,6 @@ document.addEventListener('DOMContentLoaded', function() {
         a.target = link.target;
         li.appendChild(a);
         ulb.appendChild(li);
-    });
-
-    // ************************************************
-    // ************************************************
-    // Other Links
-    // create <h2></h2> element
-    const h2c = document.createElement('h2');
-    h2c.textContent = 'Other Notes';
-
-    // create <ul></ul> element
-    const ulc = document.createElement('ul');
-
-    // links
-    const links_c = [
-        { text: 'understanding machine learning', url: 'https://docs.google.com/document/d/1a5JSiA0CnDb3c-3RTq_AHAoR7iCm-Dfhpsx5j_9dOIs/edit#heading=h.uvcjis6kto7v', target: '_blank' }
-    ];
-
-    // for loop to create sidebar links as <li> elements
-    links_c.forEach(link => {
-        const li = document.createElement('li');
-        const a = document.createElement('a');
-        a.href = link.url;
-        a.textContent = link.text;
-        a.target = link.target;
-        li.appendChild(a);
-        ulc.appendChild(li);
     });
 
     // ************************************************
