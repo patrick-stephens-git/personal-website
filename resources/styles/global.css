@@ -20,7 +20,6 @@ body {
     /* setting: top | right | bottom | left */
     margin-left: auto; /* center content */
     margin-right: auto; /* center content */
-    /* border: 2px solid rgb(255, 0, 0); */
     padding: 0 10px 0 10px;
     
     /* ************* */
@@ -47,8 +46,6 @@ main {
     grid-template-columns: repeat(5, 1fr);
     grid-template-areas: 
         "main-content-container main-content-container main-content-container main-content-container global-sidebar-container";
-
-    margin: 2px;
     padding: 0 10px 0 10px;
 }
 
@@ -85,6 +82,9 @@ main {
 
 h1, h2 {
     font-size: 1.1em;
+    margin-block-start: 0.67em; /* Override browser default margins */
+    margin-block-end: 0.67em;   /* Override browser default margins */
+    
 }
 
 h3 {
