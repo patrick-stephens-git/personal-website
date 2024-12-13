@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // links
     const links_b = [
-        { text: 'search from a product perspective', url: '/posts/search-from-a-product-perspective.html', target: '_self' } //,
+        { text: 'understanding search for product managers', url: '/posts/understanding-search-for-product-managers.html', target: '_self' } //,
         // { text: 'document understanding', url: 'xxxx', target: '_blank' },
     ];
 

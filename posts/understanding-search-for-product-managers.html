@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Understanding Search for Product Managers | Patrick Stephens</title>
+    <link rel="stylesheet" href="/resources/styles/global.css">
+    <link href="https://patrickcstephens.com/posts/understanding-search-for-product-managers.html" rel="canonical">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <base href="/"> 
+
+    <!-- Head Elements: https://www.w3schools.com/html/html_head.asp -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8"> <!-- Define the character set used -->
+    <meta name="author" content="Patrick Stephens">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <!-- <meta name="robots" content="noindex, nofollow"> -->
+
+    <!-- Page Content Scripts -->
+    <script src="resources/js/global-nav.js"></script>
+    <script src="resources/js/global-sidebar.js"></script>
+    <script src="resources/js/global-feedback-request.js"></script>
+    <script src="resources/js/global-footer.js"></script>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5GGZZMBHJP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5GGZZMBHJP');
+</script>
+<body>
+    <header>
+        <div class="global-nav-container" id="global-nav-container">
+        <!-- global-nav.js will execute here -->
+        </div>
+    </header>
+    <main>
+        <div class="main-content-container">
+            <div class="content">
+                <h1>Understanding Search for Product Managers</h1>
+                <p>The core function of search is helping your users find <i>something</i> (usually defined as a "document" within an "index"). As a Product Manager solving search problems its important to understanding the links between your documents, your queries, and your users.</p>
+                <h2>User Understanding</h2>
+                <p>Let's assume that you are a Product Manager for a job search engine and your target users are Software Engineers who are looking for their next job. What are their use cases of your product? Software Engineers might search using queries that contain a job title, their desired location, or maybe their skillset in order to find their next job. What if your users don't contain this information in their query? How might you extract that information from your users? If you can learn this information from them (perhaps by allowing them to create a user profile) then you can also use this information to surface relevant documents.</p>
+                <p>You could use this information to prioritize surfacing certain documents for your users:</p>
+                <div class="example-content-container">
+                    <ul>
+                        <li>- If your user is located in Austin, TX then you could prioritize surfacing documents you retrieve to those where "city: austin; state: tx"</li>
+                        <li>- If your user has prior work history then you could prioritize surfacing documents where "experience_level: entry-level"</li>
+                        <li>- If your users has python skills then you could prioritize surfacing documents where "skills: python"</li>
+                        <li>- If your users has a history of employment in small businesses then you could prioritize surfacing documents where "size: small business"</li>
+                    </ul>
+                </div>
+                <h2>Document Understanding</h2>
+                <p></p>
+                <p>The document is what your users are going to be looking for, which will help them achieve their goal. In this scenario: a job posting will help your target user find their next job. You should spend time understanding these documents. Sometimes they're structured and sometimes they're unstructured. What structured information do they contain today? What information is missing that would help your target user achieve their goal? For example, a job posting might contain a job title, company name, location, and job description, but what if your users are searching for a job within an industry? How might you extract that information from the job posting you have available?</p>
+                <p>You could use the information you have to classify the document:</p>
+                <div class="example-content-container">
+                    <ul>
+                        <li>- category: engineering, marketing</li>
+                        <li>- industry: finance, healthcare</li>
+                        <li>- type: full-time, part-time, contract, internship</li>
+                        <li>- experience_level: entry-level, mid-level, senior-level</li>
+                        <li>- location_type: on-site, remote, hybrid</li>
+                    </ul>
+                </div>
+                <p>You could annotate the document by extracting individual strings:</p>
+                <div class="example-content-container">
+                    <ul>
+                        <li>- skills: python, java, agile methodologies</li>
+                        <li>- size: small business, medium-sized company, large enterprise</li>
+                        <li>- salary_range: low, medium, high</li>
+                        <li>- benefits: health insurance, 401k match, relocation assistance</li>
+                    </ul>
+                </div>
+                <p>For example, you may start with this document:</p>
+                <div class="example-content-container">
+                    <pre><code>{
+"id": 562057355,
+"job_title": "Software Engineer",
+"company_name": "Patpatpat Inc.",
+"job_description": "At Patpatpat Inc., we are searching for a candidate with 3-5 years of experience to bring their skills in Javascript and Python to our innovative tech company in Austin, TX.
+
+As part of our engineering team, you'll tackle exciting challenges in a hybrid work environment that balances flexibility and collaboration. We offer a full-time position in a growing organization that has over 150 employees, with an above industry standard salary and outstanding benefits, including health insurance, 401k match, and relocation assistance.
+
+Patpatpat Inc. fosters growth, creativity, and teamwork. If you're ready to make an impact in the technology industry, don't miss your chance to apply.",
+"location": {
+    "city": "Austin",
+    "state": "TX",
+    "country": "USA"
+},
+"post_date": "2024-07-01",
+"application_deadline": "2024-08-01"
+}</code></pre>
+                                    </div>
+                <p>And by using the information you have available you could turn it this document:</p>
+                <div class="example-content-container">
+                    <pre><code>{
+"id": 562057355,
+"job_title": "Software Engineer",
+"company_name": "Patpatpat Inc.",
+"job_description": "At Patpatpat Inc., we are searching for a candidate with 3-5 years of experience to bring their skills in Javascript and Python to our innovative tech company in Austin, TX.
+
+As part of our engineering team, you'll tackle exciting challenges in a hybrid work environment that balances flexibility and collaboration. We offer a full-time position in a growing organization that has over 150 employees, with an above industry standard salary and outstanding benefits, including health insurance, 401k match, and relocation assistance.
+
+Patpatpat Inc. fosters growth, creativity, and teamwork. If you're ready to make an impact in the technology industry, don't miss your chance to apply.",
+"location": {
+    "city": "Austin",
+    "state": "TX",
+    "country": "USA"
+},
+"experience_level": "mid-level",
+"location_type": "hybrid",
+"category": "engineering",
+"industry": "technology",
+"type": "full-time",
+"size": "medium-sized company",
+"salary_range": "high",
+"skills": ["javascript", "python"],
+"benefits": ["health insurance", "401k match", "relocation assistance"],
+"post_date": "2024-07-01",
+"application_deadline": "2024-08-01"
+}</code></pre>
+                                    </div>
+                <p>Make it easy to surface the right documents by understanding your target user and their use cases.</p>
+                <h2>Query Understanding</h2>
+                <p>The query is is how your users are looking for the documents you have so that they can achieve their goal. These queries will represent the use case of your users.You should spend time understanding how your users search so that you can target the right actions to take. How do your users look for jobs? Do they search using job titles, company names, locations, or skills? How might you extract this information from their queries?</p>
+                <p>You could classify their query:</p>
+                <div class="example-content-container">
+                    <ul>
+                        <li>- The query "remote software engineer" can be classified as "location_type: remote; job_category: engineering"</li>
+                        <li>- The query "healthcare marketing" can be classified as "job_industry: healthcare; job_category: marketing"</li>
+                        <li>- The query "entry-level finance" can be classified as "experience_level: entry-level; job_industry: finance"</li>
+                    </ul>
+                </div>
+                <p>You could annotate individual strings within their query:</p>
+                <div class="example-content-container">
+                    <ul>
+                        <li>- The query "product manager google" can be annotated as "job_title: product manager; company_name: google"</li>
+                        <li>- The query "python developer" can be annotated as "skills: python; job_title: developer"</li>
+                        <li>- The query "$100,000 jobs" can be annotated as "salary_range: high"</li>
+                        <li>- The query "no experience jobs" can be annotated as "experience_level: entry-level"</li>
+                    </ul>
+                </div>
+                <p>You could even rewrite their query:</p>
+                <div class="example-content-container">
+                    <ul>
+                        <li>- The query "product management" can be rewritten as "product manager"</li>
+                        <li>- The query "swe" can be rewritten as "software engineer"</li>
+                        <li>- The query "twitter" can be rewritten as "x"</li>
+                        <li>- The query "20 hour per week jobs" can be rewritten as "part-time jobs"</li>
+                    </ul>
+                </div>
+                <div class="main-content-divider"></div>
+                <h2>Retrieval</h2>
+                <p>Using the information you've learned above you can now build your own query to match against the documents in your index. For example, if you know that your user has python skills and searches for "remote swe" then a query you might build to retrieve documents could be:</p>
+                <div class="example-content-container">
+<pre><code>{
+    "query": {
+        "bool": {
+        "must": [
+            {
+            "multi_match": {
+                "query": "software engineer",
+                "fields": ["job_title^3", "job_description"]
+            }
+            },
+            {
+            "term": {
+                "location_type": "remote"
+            }
+            },
+            {
+            "term": {
+                "skills": "python"
+            }
+            }
+        ],
+        "should": [
+            {
+            "match": {
+                "job_title": "swe"
+            }
+            }
+        ]
+        }
+    },
+    "sort": [
+        {
+        "_score": {
+            "order": "desc"
+        }
+        }
+    ]
+    }</code></pre>
+                </div>
+                <p>This query represents the intent of your user. Using this query you can retrieve a list of relevant documents.</p>
+                <h2>Ranking</h2>
+                <p>You can rerank the list of documents you've retrieved so that the <i>most</i> relevant documents are in the top positions of the search results. If your user searches for "product manager jobs austin tx" they may want to see popular jobs that other users have already applied to. If your business goal is to increase applies then you may want to increase the visibility of the retrieved job postings that users have previously applied to. The documents can be reranked with a ranking model that predicts a relevance score using a set of selected features from the documents, the query, and the user.</p>
+
+                <p>Ranking documents relies on the user's query and its relationship to the document. We call these query-dependent features:</p>
+                <div class="example-content-container">
+                    <ul>
+                        <li>- BM25 score of the query and job posting</li>
+                        <li>- Cosine similarity between the query and job posting embeddings</li>
+                        <li>- Jaccard similarity between the query and fields of the job posting</li>
+                        <li>- Apply rate of a job posting for the query</li>
+                        <li>- Explicit feedback signals, such as a thumbs down, of a job posting for the query</li>
+                    </ul>
+                </div>
+
+                <p>Ranking documents also relies on the retrieved document itself. We call these query-independent features:</p>
+                <div class="example-content-container">
+                    <ul>
+                        <li>- Click-through rate (CTR) of the job posting</li>
+                        <li>- Total applies to the job posting</li>
+                        <li>- Creation date (freshness) of the job posting</li>
+                        <li>- Quality of the job posting</li>
+                        <li>- Brand authority of the job posting company</li>
+                        <li>- Rating of the job posting company</li>
+                    </ul>
+                </div>
+
+                <p>Additionally, ranking documents can also rely on the context of the user. We call these contextual ranking features:</p>
+                <div class="example-content-container">
+                    <ul>
+                        <li>- Location of the user: If a user is based in Austin, TX then job postings in Austin, TX may rank higher.</li>
+                        <li>- Preferences of the user: If a user prefers to work remotely then job postings that are remote may rank higher.</li>
+                        <li>- Search history of the user: If a user frequently searches for "software engineer internships" then job postings with "job_type": "internship" may rank higher.</li>
+                        <li>- Engagement history of the user: If a user frequently applies to job postings with "skills": "python" and job postings with "salary_range": "high" then job postings that match both of these criteria may rank higher.</li>
+                    </ul>
+                </div>
+
+                <p>With all of these features combined and the output of your ranking model you should now have a ranked list of documents that are relevant to your user and their query that will help your user achieve their goal of finding their next job.</p>
+                <div class="global-feedback-request-container" id="global-feedback-request-container">
+                    <!-- global-feedback-request.js will execute here -->
+                </div>
+            </div>
+            <div class="responsive-main-content-sidebar-divider"></div>
+        </div>
+        <div class="global-sidebar-container" id="global-sidebar-container">
+            <!-- global-sidebar.js will execute here -->
+        </div>
+    </main>
+    <footer>
+        <div class="global-footer-container" id="global-footer-container">
+            <!-- global-footer.js will execute here -->
+        </div>
+    </footer>
+</div>
+</body>
+</html>
