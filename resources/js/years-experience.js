@@ -1,5 +1,7 @@
  // Define the start date
-const startDate = new Date('2019-04-01');
+const careerStartDate = new Date('2014-06-01');
+const saasStartDate = new Date('2016-07-01');
+const productStartDate = new Date('2019-04-01');
 
 // Calculate years of experience
 function calculateYears(start) {
@@ -15,4 +17,6 @@ function calculateYears(start) {
 }
 
 // Get and update the span element
-document.getElementById('years-experience').textContent = calculateYears(startDate);
+document.getElementById('career-years-experience').textContent = calculateYears(careerStartDate);
+document.getElementById('saas-years-experience').textContent = calculateYears(saasStartDate);
+document.getElementById('product-years-experience').textContent = calculateYears(productStartDate);
