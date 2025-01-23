@@ -1,6 +1,10 @@
 /* ************************************************************ */
 /* Grid Container */
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     max-width: 960px; /* Responsive */
 
