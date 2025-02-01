@@ -149,6 +149,7 @@ li {
     float: left;
     margin: 0 10px 10px 0;
     border: 2px solid #bcbcbc;
+    border-radius: 5px;
     padding: 2px;
 }
 
@@ -158,6 +159,7 @@ li {
     display: block; /* block = starts on a new and takes up the whole width of the page */
     margin: 10px auto 10px auto;
     border: 2px solid #bcbcbc;
+    border-radius: 5px;
     /* padding: 2px; */
 }
 
@@ -167,6 +169,7 @@ li {
     display: block; /* block = starts on a new and takes up the whole width of the page */
     margin: 10px auto 10px auto;
     border: 2px solid #bcbcbc;
+    border-radius: 5px;
     padding: 2px;
 }
 
@@ -192,6 +195,7 @@ li {
         display: block;
         margin: 15px 0 0 0;
         border: 1px solid #bcbcbc;
+        border-radius: 5px;
     }
     
     .global-sidebar-container {
@@ -206,7 +210,7 @@ li {
 /* Responsive: Mobile Phone */
 @media (max-width: 480px) {
     body {
-        font-size: 95%;
+        font-size: 98%;
         margin: 10px 10px 0 10px;
     }
 
