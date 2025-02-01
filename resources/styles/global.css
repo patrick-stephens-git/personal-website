@@ -68,6 +68,7 @@ main {
 .main-content-divider {
     margin: 15px 0 0 0;
     border: 1px solid #bcbcbc;
+    border-radius: 5px;
 }
 
 .responsive-main-content-sidebar-divider {
