@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Product Management Links
     // create <h2></h2> element
     const h2a = document.createElement('h2');
-    h2a.textContent = 'Product Posts';
+    h2a.textContent = 'Posts';
 
     // create <ul></ul> element
     const ula = document.createElement('ul');
