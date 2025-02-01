@@ -4,11 +4,12 @@ document.addEventListener('DOMContentLoaded', function() {
   const footer = document.createElement('div');
   footer.className = 'global-footer';
 
-  // create string
-  const textNode = document.createTextNode('PS');
+  // create <p> element
+  const paragraph = document.createElement('p');
+  paragraph.textContent = 'PS';
 
   // append string
-  footer.appendChild(textNode);
+  footer.appendChild(paragraph);
 
   // add <div> within the <div class="global-footer-container"> element
   const container = document.getElementById('global-footer-container');
