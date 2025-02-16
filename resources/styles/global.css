@@ -1,14 +1,12 @@
 /* ************************************************************ */
-/* Grid Container */
-
 html {
     scroll-behavior: smooth;
 }
 
+/* ************************************************************ */
+/* Grid Container */
 body {
     max-width: 960px; /* Responsive */
-
-    /* ************* */
     /* Grid Settings */
     display: grid;
     grid-template-rows: auto;
@@ -17,29 +15,21 @@ body {
         "global-nav-container"
         "main-content-container"
         "global-footer-container";
-
-    /* ************* */
-    /* Box Settings */
-    /* Box Model: margin, border, padding, <content> */
-    /* setting: top | right | bottom | left */
     margin-left: auto; /* center content */
     margin-right: auto; /* center content */
     padding: 0 10px 0 10px;
-    
-    /* ************* */
     /* Page Settings */
-    background-color: #F0F0F0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    /* font-family: Arial, Helvetica, sans-serif; */
-    color: #333333; /* text color */
+    background-color: #F0F0F0; /* Background Color */
+    color: #333333; /* Text Color */
+
 }
 
 /* ************************************************************ */
 /* Grid Items */
-
 .global-nav-container {
     grid-area: global-nav-container;
-    margin: 2px;
+    margin: 2px 0px 0px 0px;
     padding: 5px 10px 5px 10px;
 }
 
@@ -61,7 +51,7 @@ main {
 
 .example-content-container {
     padding: 20px 20px 20px 20px;
-    background-color: #dbdbdb;
+    background-color: #bcbcbc;
     border-radius: 5px;
 }
 
@@ -79,24 +69,28 @@ main {
     grid-area: global-footer-container;
     text-align: center;
     margin: 10px 10px 0 10px;
-    padding: 5px 0 5px 0;
-    background-color: #FFD27F;
+    padding: 1px 0 1px 0;
+    border-radius: 5px;
+    background-color: #bcbcbc;
 }
 
 /* ************************************************************ */
 /* Text */
 
 h1, h2 {
+    color: #333333; /* Accent Color */
     font-size: 1.0em;
     margin-block-start: 0.67em; /* Override browser default margins */
     margin-block-end: 0.67em;   /* Override browser default margins */
 }
 
 h3 {
+    color: #333333; /* Accent Color */
     font-size: 0.9em;
 }
 
 h4 {
+    color: #333333; /* Accent Color */
     font-size: 0.95em;
 }
 
@@ -108,6 +102,15 @@ pre {
     margin: 0;
     padding: 0;
     white-space: pre-wrap;
+}
+
+a {
+    color: #E53935; /* Link Font Color */
+    text-decoration: none;
+}
+
+a:hover {
+    color: #C62828; /* Accent Link Font Color (on hover) */
 }
 
 code {
@@ -205,6 +208,7 @@ li {
     }
 
 }
+
 /* ************************************************************ */
 /* ************************************************************ */
 

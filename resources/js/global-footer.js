@@ -4,9 +4,13 @@ document.addEventListener('DOMContentLoaded', function() {
   const footer = document.createElement('div');
   footer.className = 'global-footer';
 
+  // get the current year
+  const currentYear = new Date().getFullYear();
+
   // create <p> element
   const paragraph = document.createElement('p');
-  paragraph.textContent = 'PS';
+  paragraph.textContent = `© Patrick Stephens ${currentYear}. All Rights Reserved.`;
+
 
   // append string
   footer.appendChild(paragraph);
