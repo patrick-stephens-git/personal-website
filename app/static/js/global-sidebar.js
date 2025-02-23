@@ -15,9 +15,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // links
     const links_a = [
-        { text: 'product strategy', url: '/posts/product-strategy.html', target: '_self' },
-        { text: 'assumption validation', url: '/posts/assumption-validation.html', target: '_self' },
-        { text: 'search for product managers', url: '/posts/understanding-search-for-product-managers.html', target: '_self' }
+        { text: 'product strategy', url: 'https://patrickcstephens.com/posts/product-strategy.html', target: '_self' },
+        { text: 'assumption validation', url: 'https://patrickcstephens.com/posts/assumption-validation.html', target: '_self' },
+        { text: 'search for product managers', url: 'https://patrickcstephens.com/posts/understanding-search-for-product-managers.html', target: '_self' }
     ];
 
     // for loop to create sidebar links as <li> elements

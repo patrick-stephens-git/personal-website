@@ -11,6 +11,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const paragraph = document.createElement('p');
   paragraph.textContent = `© Patrick Stephens ${currentYear}. All Rights Reserved.`;
 
+  // change font size
+  paragraph.style.fontSize = '0.75em'; 
 
   // append string
   footer.appendChild(paragraph);
