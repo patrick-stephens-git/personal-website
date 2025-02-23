@@ -2,4 +2,22 @@
 page-template.html
 .DS_Store
 
-#
+# Ignore sensitive files
+.env
+
+# Ignore virtual environment directories
+venv/
+
+# Ignore Python test files
+tests/
+
+# Ignore Python bytecode files
+__pycache__/
+*.pyc
+
+# Ignore pytest cache
+.pytest_cache/
+
+# Ignore logs
+logs/
+*.log
