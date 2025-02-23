@@ -1,0 +1,12 @@
+from flask import Flask, render_template
+
+app = Flask(__name__, static_folder="../static") # static_folder is the path to the static folder
+
+# Define a route for the homepage
+@app.route("/")
+def hello_world():
+        message = "Hello, World from Flask Template!"
+        return render_template('patchat.html', message=message)
+
+if __name__ == "__main__":
+    app.run(debug=True)

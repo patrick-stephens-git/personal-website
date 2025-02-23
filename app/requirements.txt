@@ -2,7 +2,9 @@
 
 # Production dependencies
 python-dotenv
+gunicorn
+flask
 langchain_openai
 
 # Development dependencies
-pytest
+# pytest
