@@ -243,7 +243,7 @@ li {
     align-self: flex-end;
     text-align: right;
     display: inline-block; /* Shrinks background to fit text */
-    max-width: 60%; /* Prevents overly wide messages */
+    /* max-width: 60%; /* Prevents overly wide messages */
     margin-left: auto; /* This pushes the element to the right */
 }
 
