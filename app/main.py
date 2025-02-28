@@ -8,6 +8,9 @@ import json
 
 app = Flask(__name__)
 
+# Setup logging
+logger = setup_logging()
+
 ###################################
 # Define a route for the homepage
 ###################################
@@ -52,8 +55,8 @@ def chat():
 
         response = generate_response(user_prompt, vector_store)
 
-        print(f"User prompt: {user_prompt}")
-        print(f"AI response: {response}")
+        app.logger.info(f"User Prompt: {user_prompt}")
+        app.logger.info(f"API Response: {response}")
 
         return jsonify({"response": response})
     except Exception as e:

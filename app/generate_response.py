@@ -9,7 +9,7 @@ logger = setup_logging()
 ###################################
 # Retrieve Relevant Chunks
 ###################################
-def retrieve_relevant_chunks(query, vector_store, k=5):
+def retrieve_relevant_chunks(query, vector_store, k=10):
     retriever = vector_store.as_retriever(search_kwargs={"k": k})
     return retriever.get_relevant_documents(query)
 
@@ -33,8 +33,8 @@ def generate_response(user_prompt, vector_store):
     logger.info(f"Retrieved {len(relevant_docs)} chunks")
 
     # Format retrieved documents as context
-    context = "\n".join([doc.page_content for doc in relevant_docs]) if relevant_docs else "No relevant information found."
-    logger.info(f"Retrieved chunks (context): {context}")
+    context = "\n".join([doc.page_content for doc in relevant_docs]) if relevant_docs else "No relevant chunks found."
+    logger.info(f"Retrieved chunks: {context}")
 
     # Create the final prompt
     final_prompt = f"""
@@ -44,11 +44,12 @@ def generate_response(user_prompt, vector_store):
     Document Context: {context}
     Question: {user_prompt}
     """
-    logger.info(f"User Prompt: {user_prompt}")
-    logger.info(f"User Prompt: {final_prompt}")
+    # logger.info(f"User Prompt: {user_prompt}")
+    # logger.info(f"Final Prompt: {final_prompt}")
     
     # Generate response from OpenAI
     response = llm.invoke(final_prompt)
+    # logger.info(f"API Response: {response}")
 
     # Extract the assistant's reply
     return response.content

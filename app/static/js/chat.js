@@ -14,7 +14,7 @@ async function sendMessage() {
         if (!recaptchaResponse) {
             // Display error message in chat
             const errorMessage = document.createElement('div');
-            errorMessage.className = 'system-message';
+            errorMessage.className = 'ai-response error-message'; // Use AI response styling
             errorMessage.textContent = "Please complete the CAPTCHA verification.";
             chatBox.appendChild(errorMessage);
             return;
@@ -28,7 +28,7 @@ async function sendMessage() {
             // Show success message
             const successMessage = document.createElement('div');
             successMessage.className = 'system-message success';
-            successMessage.textContent = "Verification successful! You can now chat freely.";
+            // successMessage.textContent = "Verification successful! You can now chat freely.";
             chatBox.appendChild(successMessage);
         }
     }
@@ -77,16 +77,24 @@ async function sendMessage() {
         
         // Display error message
         const errorMessage = document.createElement('div');
-        errorMessage.className = 'system-message';
+        errorMessage.className = 'ai-response error-message'; // Use AI response styling
         errorMessage.textContent = "An error occurred. Please try again.";
         chatBox.appendChild(errorMessage);
     }
 }
 
-// Add enter key functionality
+// Add enter key functionality and initial AI message
 document.addEventListener('DOMContentLoaded', function() {
     const userInput = document.getElementById('user-input');
-    
+    const chatBox = document.getElementById('chat-box');
+
+    // Add starter AI message
+    const starterMessage = document.createElement('div');
+    starterMessage.className = 'ai-response';
+    starterMessage.textContent = "Ask me anything about product management. For example: What is product sense? How can I surface the right problems to solve? How can I understand my users? How can I validate value? How can I write a product vision? How do I live in the future? How do I decide what to build? How do I change the status quo? How do I know if I've achieved product market fit? How do I know if I should pivot?";
+    chatBox.appendChild(starterMessage);
+
+    // Listen for Enter key
     userInput.addEventListener('keypress', function(event) {
         if (event.key === 'Enter') {
             event.preventDefault();
