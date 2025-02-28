@@ -39,8 +39,17 @@
     <main>
         <div class="main-content-container">
             <div class="content">
-                <h1>Lorem Ipsum</h1>
-                <p>{{ message }}</p>
+                <!-- Chat Assistant -->
+                <div class="chat-container">
+                    <div id="chat-box" class="chat-box"></div>
+                    <input type="text" id="user-input" class="chat-input" placeholder="Ask me anything about product management...">
+
+                    <div class="g-recaptcha" id="recaptcha" data-sitekey="6Lfc5-QqAAAAAPxDOhglFbMVRSj1dCwfU7K15iuo"></div>
+
+                    <button id="send-button" onclick="sendMessage()">Send</button>
+                </div>
+                <script src="https://www.google.com/recaptcha/api.js" async defer></script> <!-- loads Google’s reCAPTCHA library, used for verifying the CAPTCHA; it must be loaded for the grecaptcha.getResponse() function to work -->
+                <script src="{{ url_for('static', filename='js/chat.js') }}"></script> <!-- Chat Assistant -->
                 <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Parturient consectetur scelerisque imperdiet primis duis. Aptent integer tempor viverra pretium consequat. Ante sagittis accumsan sagittis vehicula mi ac sollicitudin ad. Proin porttitor rutrum commodo euismod cras sagittis fusce penatibus himenaeos. Iaculis malesuada auctor arcu, rutrum nec et metus accumsan. Accumsan finibus aliquet nostra praesent lobortis commodo ultricies. Est dolor vulputate interdum tristique consequat elementum purus.</p>
                 <div class="main-content-divider"></div>
                 <h2>Sem Gravida</h2>

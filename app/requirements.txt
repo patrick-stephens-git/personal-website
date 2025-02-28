@@ -5,6 +5,9 @@ python-dotenv
 gunicorn
 flask
 langchain_openai
+langchain-community # maybe, for doc chunking
+pymupdf # maybe
+faiss-cpu # maybe
 
 # Development dependencies
 # pytest

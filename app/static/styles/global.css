@@ -180,6 +180,45 @@ li {
 /* ************************************************************ */
 /* ************************************************************ */
 
+/* AI Chat */
+
+.chat-container {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.chat-box {
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+}
+
+.chat-input {
+    width: calc(100% - 60px);
+    padding: 10px;
+    margin-right: 10px;
+}
+
+.user-message, .ai-response {
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.user-message {
+    background-color: #e1ffc7;
+    align-self: flex-end;
+}
+
+.ai-response {
+    background-color: #f1f1f1;
+}
+
+/* ************************************************************ */
+/* ************************************************************ */
+
 /* Responsive: Tablet */
 @media (max-width: 768px) {
     main {
