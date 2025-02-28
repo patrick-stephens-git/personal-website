@@ -55,8 +55,8 @@ def chat():
 
         response = generate_response(user_prompt, vector_store)
 
-        app.logger.info(f"User Prompt: {user_prompt}")
-        app.logger.info(f"API Response: {response}")
+        logger.info(f"User Prompt: {user_prompt}")
+        logger.info(f"API Response: {response}")
 
         return jsonify({"response": response})
     except Exception as e:
