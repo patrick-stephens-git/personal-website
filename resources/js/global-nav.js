@@ -1,3 +1,4 @@
+// event listener; waits for DOM to load before executing function
 document.addEventListener('DOMContentLoaded', function() {
     // Nav
     const links = [

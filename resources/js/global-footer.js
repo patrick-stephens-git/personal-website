@@ -1,31 +1,21 @@
-document.addEventListener('DOMContentLoaded', function() {
-  
-  // create <div></div> element
-  const footer = document.createElement('div');
-  footer.className = 'global-footer';
+// event listener; waits for DOM to load before executing function
+document.addEventListener('DOMContentLoaded', function() { 
+    const footer = document.createElement('div'); // create element: <div></div>
+    footer.className = 'global-footer'; // add class: <div class="global-footer"></div>
 
-  // get the current year
-  const currentYear = new Date().getFullYear();
+    const currentYear = new Date().getFullYear(); // create a new Date object (current datetime), then extract the YYYY (year) from Date object.
 
-  // create <p> element
-  const paragraph = document.createElement('p');
-  paragraph.textContent = `© Patrick Stephens ${currentYear}. All Rights Reserved.`;
+    const paragraph = document.createElement('p'); // create element: <p></p>
+    paragraph.textContent = `© Patrick Stephens ${currentYear}. All Rights Reserved.`; // textContent treats text as plain text
+    paragraph.style.fontSize = '0.75em'; // change font size
 
-  // change font size
-  paragraph.style.fontSize = '0.75em'; 
+    footer.appendChild(paragraph); // appends paragraph to footer: <div class="global-footer"><p style="font-size: 0.75em;">textContent</p></div>
 
-  // append string
-  footer.appendChild(paragraph);
-
-  // add <div> within the <div class="global-footer-container"> element
-  const container = document.getElementById('global-footer-container');
-  if (container) {
-      container.appendChild(footer);
-  };
-  if (container) {
-      container.appendChild(footer);
-      console.log('Global footer added successfully');
-  } else {
-      console.log('Global footer not found');
-  }
+    const container = document.getElementById('global-footer-container'); // gets existing element from html with id="global-footer-container"
+    if (container) { // if container exists 
+        container.appendChild(footer); // append footer to container: <div id="global-footer-container"><div class="global-footer"><p style="font-size: 0.75em;">textContent</p></div></div>
+        console.log('Global footer added successfully'); // log: success
+    } else { // if container does not exist
+        console.log('Global footer not found'); // log: failure
+    }
 });
