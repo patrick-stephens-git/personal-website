@@ -1,5 +1,15 @@
 // event listener; waits for DOM to load before executing function
 document.addEventListener('DOMContentLoaded', function() { 
+    function checkElementById(id, element) {
+        const container = document.getElementById(id); // gets existing element from html with id="id"
+        if (container) { // if container exists 
+            container.appendChild(element); // append element to container
+            console.log(`${id} added successfully`); // log: success
+        } else { // if container does not exist
+            console.log(`${id} not found`); // log: failure
+        }
+    }
+    
     const footer = document.createElement('div'); // create element: <div></div>
     footer.className = 'global-footer'; // add class: <div class="global-footer"></div>
 
@@ -11,11 +21,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     footer.appendChild(paragraph); // appends paragraph to footer: <div class="global-footer"><p style="font-size: 0.75em;">textContent</p></div>
 
-    const container = document.getElementById('global-footer-container'); // gets existing element from html with id="global-footer-container"
-    if (container) { // if container exists 
-        container.appendChild(footer); // append footer to container: <div id="global-footer-container"><div class="global-footer"><p style="font-size: 0.75em;">textContent</p></div></div>
-        console.log('Global footer added successfully'); // log: success
-    } else { // if container does not exist
-        console.log('Global footer not found'); // log: failure
-    }
+    checkElementById('global-footer-container', footer);
+
 });

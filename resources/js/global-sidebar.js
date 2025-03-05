@@ -1,51 +1,41 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // create <sidebar></sidebar> element
-    const sidebarBar = document.createElement('sidebar');
-    sidebarBar.className = 'global-sidebar';
+    function checkElementById(id, element) {
+        const container = document.getElementById(id); // gets existing element from html with id="id"
+        if (container) { // if container exists 
+            container.appendChild(element); // append element to container
+            console.log(`${id} added successfully`); // log: success
+        } else { // if container does not exist
+            console.log(`${id} not found`); // log: failure
+        }
+    }
 
-    // ************************************************
-    // ************************************************
-    // Product Management Links
-    // create <h2></h2> element
-    const h2a = document.createElement('h2');
-    h2a.textContent = 'Posts';
+    const sidebarBar = document.createElement('sidebar'); // create element: <sidebar></sidebar>
+    sidebarBar.className = 'global-sidebar'; // add class: <sidebar class="global-sidebar"></sidebar>
 
-    // create <ul></ul> element
-    const ula = document.createElement('ul');
+    const h2_posts = document.createElement('h2'); // create element: <h2></h2>
+    h2_posts.textContent = 'Posts'; // textContent treats text as plain text
 
-    // links
-    const links_a = [
+    const ul_posts = document.createElement('ul'); // create element: <ul></ul>
+
+    const links_posts = [
         { text: 'product strategy', url: '/posts/product-strategy.html', target: '_self' },
         { text: 'assumption validation', url: '/posts/assumption-validation.html', target: '_self' },
         { text: 'search for product managers', url: '/posts/understanding-search-for-product-managers.html', target: '_self' }
     ];
 
-    // for loop to create sidebar links as <li> elements
-    links_a.forEach(link => {
-        const li = document.createElement('li');
-        const a = document.createElement('a');
-        a.href = link.url;
-        a.textContent = link.text;
-        a.target = link.target;
-        li.appendChild(a);
-        ula.appendChild(li);
+    links_posts.forEach(link => {
+        const li = document.createElement('li'); // create element: <li></li>
+        const a = document.createElement('a'); // create element: <a></a>
+        a.href = link.url; // add attribute: <a href="link.url"></a>
+        a.textContent = link.text; // add text: <a href="link.url">text</a>
+        a.target = link.target; // add target: <a href="link.url" target="link.target">text</a>
+        li.appendChild(a); // append link to list item element: <li><a href="link.url" target="link.target">text</a></li>
+        ul_posts.appendChild(li); // append list item to unordered list element: <ul><li><a href="link.url" target="link.target">text</a></li></ul>
     });
 
-    // ************************************************
-    // ************************************************
-    // append elements to sidebar: <h2> and <ul>
-    sidebarBar.appendChild(h2a);
-    sidebarBar.appendChild(ula);
+    sidebarBar.appendChild(h2_posts); // append h2 to sidebar: <sidebar><h2>textContent</h2></sidebar>
+    sidebarBar.appendChild(ul_posts); // append ul to sidebar: <sidebar><h2>textContent</h2><ul><li><a href="" target=""></a></li>...<li><a href="" target=""></a></li></ul></sidebar>
 
-    // add <sidebar> within the <div class="global-sidebar-container"> element
-    const container = document.getElementById('global-sidebar-container');
-    if (container) {
-        container.appendChild(sidebarBar);
-    };
-    if (container) {
-        container.appendChild(sidebarBar);
-        console.log('Global sidebar added successfully');
-    } else {
-        console.log('Global sidebar not found');
-    }
+    checkElementById('global-sidebar-container', sidebarBar);
+
 });

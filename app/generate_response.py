@@ -1,22 +1,16 @@
-from config import OPENAI_API_KEY, response_token_limit
+from config import response_token_limit
 from langchain_openai import ChatOpenAI
-from generate_embeddings import vector_store
+from generate_embeddings import create_or_load_vector_store
 from utils.logging_config import setup_logging
+from config import DOC_PATH, VECTOR_STORE_PATH, OPENAI_API_KEY
 
-# Setup logging
-logger = setup_logging()
+logger = setup_logging() # setup logging
 
-###################################
-# Retrieve Relevant Chunks
-###################################
-def retrieve_relevant_chunks(query, vector_store, k=10):
-    retriever = vector_store.as_retriever(search_kwargs={"k": k})
-    return retriever.get_relevant_documents(query)
+def retrieve_relevant_chunks(query, vector_store, k=10): # retrieve relevant document chunks
+    retriever = vector_store.as_retriever(search_kwargs={"k": k}) # initialize retriever
+    return retriever.invoke(query)
 
-###################################
-# Generate Response
-###################################
-def generate_response(user_prompt, vector_store):
+def generate_response(user_prompt, vector_store): # generate response
     # Initialize the LLM
     llm = ChatOpenAI(model="gpt-4o-mini",
                      temperature=0.7,
@@ -56,5 +50,6 @@ def generate_response(user_prompt, vector_store):
 
 if __name__ == '__main__':
     user_prompt: str = "Summarize this document for me."
+    vector_store = create_or_load_vector_store(DOC_PATH, VECTOR_STORE_PATH, OPENAI_API_KEY)
     example_response = generate_response(user_prompt, vector_store)
     print(example_response)
