@@ -13,9 +13,6 @@ document.addEventListener('DOMContentLoaded', function() {
         { text: 'Home', url: 'https://patrickcstephens.com/', target: '_self' },
         { text: 'PatChat', url: 'https://chat.patrickcstephens.com/', target: '_self' },
         { text: 'Posts', url: 'https://patrickcstephens.com/posts', target: '_self' },
-        { text: 'LinkedIn', url: 'https://www.linkedin.com/in/patrickcstephens/', target: '_blank' },
-        { text: 'Git', url: 'https://github.com/patrick-stephens-git', target: '_blank' },
-        { text: 'SoundCloud', url: 'https://soundcloud.com/user-579514550', target: '_blank' },
         { text: 'Contact', url: 'mailto:patrickcstephens@me.com?subject=Reaching%20out%20from%20patrickcstephens.com', target: '_self' } 
     ];
 

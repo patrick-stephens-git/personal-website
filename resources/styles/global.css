@@ -22,7 +22,6 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: #F0F0F0; /* Background Color */
     color: #333333; /* Text Color */
-
 }
 
 /* ************************************************************ */
@@ -175,6 +174,80 @@ li {
     border: 2px solid #bcbcbc;
     border-radius: 5px;
     padding: 2px;
+}
+
+/* ************************************************************ */
+/* ************************************************************ */
+
+/* AI Chat */
+.chat-container {
+    margin-top: 10px;
+    border: 1px solid #bcbcbc;
+    padding: 10px 20px 20px 20px;
+    background-color: #bcbcbc;
+    border-radius: 5px;
+    font-size: 0.825em;
+}
+
+.chat-box {
+    max-height: 300px;
+    overflow-y: auto;
+    border-radius: 5px;
+    margin: 10px 0px 10px 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.chat-input {
+    width: 100%;
+    padding: 10px 60px 10px 10px; /* padding so input text doesn't go behind send button */
+    border: 1px solid #bcbcbc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+#send-button {
+    position: absolute;
+    right: 10px;
+    background: #E53935;
+    color: #F0F0F0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    /* font-size: 14px; */
+}
+
+#send-button:hover {
+    background: #C62828;
+}
+
+.g-recaptcha {
+    margin: 20px 0px 0px 0px;
+}
+
+.user-message, .ai-response {
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.user-message {
+    background-color: #FFFFFF;
+    align-self: flex-end;
+    text-align: right;
+    display: inline-block; /* Shrinks background to fit text */
+    /* max-width: 60%; /* Prevents overly wide messages */
+    margin-left: auto; /* This pushes the element to the right */
+}
+
+.ai-response {
+    background-color: #f1f1f1;
 }
 
 /* ************************************************************ */
