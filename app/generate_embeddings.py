@@ -28,4 +28,5 @@ def create_or_load_vector_store(DOC_PATH, VECTOR_STORE_PATH, OPENAI_API_KEY): # 
         print("Document processing complete. New vector store saved.")
         return vector_store
 
-# vector_store = create_or_load_vector_store(DOC_PATH, VECTOR_STORE_PATH, OPENAI_API_KEY) # Initialize the vector store
+if __name__ == '__main__':
+    vector_store = create_or_load_vector_store(DOC_PATH, VECTOR_STORE_PATH, OPENAI_API_KEY) # Initialize the vector store

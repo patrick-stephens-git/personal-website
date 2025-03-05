@@ -1,104 +1,80 @@
-// Global variable to track if user has been verified
-let userVerified = false;
+let userVerified = false; // global variable tracking if user has been verified
 
-async function sendMessage() {
-    const userInput = document.getElementById('user-input').value.trim();
-    const chatBox = document.getElementById('chat-box');
+async function sendMessage() { // async function, loads script as soon as it’s available
+    const userInput = document.getElementById('user-input').value.trim(); // gets value of element with user-input id, removes whitespace in value
+    const chatBox = document.getElementById('chat-box'); // gets chat box element
 
-    if (!userInput) return;  // Prevent sending empty messages
+    if (!userInput) return;  // if no user input, return nothing
 
-    // Check if user is already verified or needs verification
-    if (!userVerified) {
-        const recaptchaResponse = grecaptcha.getResponse();
+    if (!userVerified) { // if user is not verified
+        const recaptchaResponse = grecaptcha.getResponse(); // get reCAPTCHA response
         
-        if (!recaptchaResponse) {
-            // Display error message in chat
-            const errorMessage = document.createElement('div');
-            errorMessage.className = 'ai-response error-message'; // Use AI response styling
-            errorMessage.textContent = "Please complete the CAPTCHA verification.";
-            chatBox.appendChild(errorMessage);
+        if (!recaptchaResponse) { // if no reCAPTCHA response
+            const errorMessage = document.createElement('div'); // create element: <div></div>
+            errorMessage.className = 'ai-response error-message'; // add class to element: <div class="ai-response error-message"></div>
+            errorMessage.textContent = "Please complete the CAPTCHA verification."; // textContent treats text as plain text
+            chatBox.appendChild(errorMessage); // append error message to chat box
             return;
-        } else {
-            // Mark user as verified
-            userVerified = true;
-            
-            // Optionally hide the reCAPTCHA after verification
-            document.getElementById('recaptcha').style.display = 'none';
-            
-            // Show success message
-            const successMessage = document.createElement('div');
-            successMessage.className = 'system-message success';
-            // successMessage.textContent = "Verification successful! You can now chat freely.";
-            chatBox.appendChild(successMessage);
+        } else { // if reCAPTCHA response exists
+            userVerified = true; // set userVerified to true
+            document.getElementById('recaptcha').style.display = 'none'; // hide reCAPTCHA element after user is verified
         }
     }
 
-    // Display user message
-    const userMessage = document.createElement('div');
-    userMessage.className = 'user-message';
-    userMessage.textContent = userInput;
-    chatBox.appendChild(userMessage);
+    const userMessage = document.createElement('div'); // create element: <div></div>
+    userMessage.className = 'user-message'; // add class to element: <div class="user-message"></div>
+    userMessage.textContent = userInput; // textContent treats text as plain text
+    chatBox.appendChild(userMessage); // append user message to chat box
+    document.getElementById('user-input').value = ''; // clear user input field (return to empty)
 
-    // Clear input field
-    document.getElementById('user-input').value = '';
-
-    try {
-        // If user is verified, we still need to send the last valid reCAPTCHA response
-        // or for subsequent messages, we can send a flag indicating prior verification
-        let requestBody = { prompt: userInput };
+    try { // try block to test for errors while code is executed 
+        let requestBody = { prompt: userInput }; // create object with prompt key and userInput value
         
-        if (userVerified) {
-            requestBody.user_verified = true;
-            // You might also want to add a session token or the last valid reCAPTCHA response
-            if (grecaptcha.getResponse()) {
-                requestBody.recaptcha_response = grecaptcha.getResponse();
+        if (userVerified) { // if user is verified
+            requestBody.user_verified = true; // add user_verified = true to requestBody object
+            if (grecaptcha.getResponse()) { // if reCAPTCHA response exists
+                requestBody.recaptcha_response = grecaptcha.getResponse(); // add recaptcha_response to requestBody object
             }
         }
 
-        const response = await fetch('/chat', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(requestBody)
+        const response = await fetch('/chat', { // fetch data from /chat route
+            method: 'POST', // POST method
+            headers: { 'Content-Type': 'application/json' }, // header type
+            body: JSON.stringify(requestBody) // convert requestBody object to JSON string
         });
 
-        const data = await response.json();
+        const data = await response.json(); // convert response to JSON format
         console.log("Server response:", data);
 
-        // Display AI response
-        const aiResponse = document.createElement('div');
-        aiResponse.className = 'ai-response';
-        aiResponse.textContent = data.response;
-        chatBox.appendChild(aiResponse);
+        const aiResponse = document.createElement('div'); // create element: <div></div>
+        aiResponse.className = 'ai-response'; // add class to element: <div class="ai-response"></div>
+        aiResponse.textContent = data.response; // textContent treats text as plain text
+        chatBox.appendChild(aiResponse); // append AI response to chat box
 
-        // Scroll to the bottom of the chat box
-        chatBox.scrollTop = chatBox.scrollHeight;
-    } catch (error) {
+        chatBox.scrollTop = chatBox.scrollHeight; // scroll to bottom of chat box
+    } catch (error) { // catch block to handle errors
         console.error("Error:", error);
-        
-        // Display error message
-        const errorMessage = document.createElement('div');
-        errorMessage.className = 'ai-response error-message'; // Use AI response styling
-        errorMessage.textContent = "An error occurred. Please try again.";
-        chatBox.appendChild(errorMessage);
+
+        const errorMessage = document.createElement('div'); // create element: <div></div>
+        errorMessage.className = 'ai-response error-message'; // add class to element: <div class="ai-response error-message"></div>
+        errorMessage.textContent = "An error occurred. Please try again."; // textContent treats text as plain text
+        chatBox.appendChild(errorMessage); // append error message to chat box
     }
 }
 
-// Add enter key functionality and initial AI message
+// event listener; waits for DOM to load before executing function
 document.addEventListener('DOMContentLoaded', function() {
-    const userInput = document.getElementById('user-input');
-    const chatBox = document.getElementById('chat-box');
+    const chatBox = document.getElementById('chat-box'); // gets chat box element
+    const starterMessage = document.createElement('div'); // create element: <div></div>
+    starterMessage.className = 'ai-response'; // add class to element: <div class="ai-response"></div>
+    starterMessage.textContent = "Ask me anything about product management. For example: What is product sense? How can I surface the right problems to solve? How can I understand my users? How can I validate value? How can I write a product vision? How do I live in the future? How do I decide what to build? How do I change the status quo? How do I know if I've achieved product market fit? How do I know if I should pivot?"; // textContent treats text as plain text
+    chatBox.appendChild(starterMessage); // append starter message to chat box
 
-    // Add starter AI message
-    const starterMessage = document.createElement('div');
-    starterMessage.className = 'ai-response';
-    starterMessage.textContent = "Ask me anything about product management. For example: What is product sense? How can I surface the right problems to solve? How can I understand my users? How can I validate value? How can I write a product vision? How do I live in the future? How do I decide what to build? How do I change the status quo? How do I know if I've achieved product market fit? How do I know if I should pivot?";
-    chatBox.appendChild(starterMessage);
-
-    // Listen for Enter key
-    userInput.addEventListener('keypress', function(event) {
-        if (event.key === 'Enter') {
-            event.preventDefault();
-            sendMessage();
+    const userInput = document.getElementById('user-input'); // gets user input element
+    userInput.addEventListener('keypress', function(event) { // event listener for keypress
+        if (event.key === 'Enter') { // if key is Enter
+            event.preventDefault(); // prevent default action
+            sendMessage(); // call sendMessage function
         }
     });
 });

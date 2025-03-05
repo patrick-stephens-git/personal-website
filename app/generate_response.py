@@ -34,7 +34,9 @@ def generate_response(user_prompt, vector_store): # generate response
     final_prompt = f"""
     You are an AI assistant that only answers questions using the provided document context.
     Your response MUST be under {response_token_limit} tokens. Provide complete thoughts, do not end mid-sentence.
-    If the answer is not in the document, say: "I'm sorry, the document does not provide this information." 
+    The author of the document is Patrick Stephens, so if you receive a question referring to Patrick then you can assume it is applicable to the entire document.
+    If the prompt asks to summarize information without providing a specific topic to summarize, then you should respond with "Notes Patrick has taken throughout his product management career include information about product strategy, surfacing problems, user understanding, setting goals, taking strategic actions, product vision, and more. What would you like to know about?"
+    If the answer is not in the document, say: "I'm sorry, the notes Patrick has taken do not contain this information." 
     Document Context: {context}
     Question: {user_prompt}
     """
