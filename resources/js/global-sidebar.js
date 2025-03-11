@@ -18,9 +18,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const ul_posts = document.createElement('ul'); // create element: <ul></ul>
 
     const links_posts = [
-        { text: 'product strategy', url: '/posts/product-strategy.html', target: '_self' },
-        { text: 'assumption validation', url: '/posts/assumption-validation.html', target: '_self' },
-        { text: 'search for product managers', url: '/posts/understanding-search-for-product-managers.html', target: '_self' }
+        { text: 'Product Strategy', url: '/posts/product-strategy.html', target: '_self' },
+        { text: 'Assumption Validation', url: '/posts/assumption-validation.html', target: '_self' }
     ];
 
     links_posts.forEach(link => {

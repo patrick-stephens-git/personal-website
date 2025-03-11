@@ -18,9 +18,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const ul_posts = document.createElement('ul'); // create element: <ul></ul>
 
     const links_posts = [
-        { text: 'product strategy', url: 'https://patrickcstephens.com/posts/product-strategy.html', target: '_self' },
-        { text: 'assumption validation', url: 'https://patrickcstephens.com/posts/assumption-validation.html', target: '_self' },
-        { text: 'search for product managers', url: 'https://patrickcstephens.com/posts/understanding-search-for-product-managers.html', target: '_self' }
+        { text: 'Product Strategy', url: 'https://patrickcstephens.com/posts/product-strategy.html', target: '_self' },
+        { text: 'Assumption Validation', url: 'https://patrickcstephens.com/posts/assumption-validation.html', target: '_self' }
     ];
 
     links_posts.forEach(link => {
