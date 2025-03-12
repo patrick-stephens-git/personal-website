@@ -3,12 +3,13 @@ import os
 
 def setup_logging() -> logging.Logger:
     os.makedirs('logs', exist_ok=True) # ensure that the logs directory exists
+    
     logging.basicConfig(
         level=logging.INFO,
         format="%(asctime)s: %(name)s - %(levelname)s - %(message)s (Line: %(lineno)d [%(filename)s])",
         datefmt="%d/%m/%Y %H:%M:%S",
         filename=os.path.join('logs', 'app.log'),  # Save log file inside the 'logs' directory
-        filemode="w",
+        filemode="a", # append to log file
         encoding="utf-8"
     )
 
