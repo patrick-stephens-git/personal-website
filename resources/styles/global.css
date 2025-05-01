@@ -157,7 +157,8 @@ li {
 }
 
 .product-image {
-    max-width: 480px;
+    /* max-width: 480px; */
+    max-width: 80%;
     height: auto;
     display: block; /* block = starts on a new and takes up the whole width of the page */
     margin: 10px auto 10px auto;
@@ -305,6 +306,6 @@ li {
     }
 
     .product-image {
-        width: 95%;
+        max-width: 100%;
     }
 }
