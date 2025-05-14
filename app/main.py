@@ -4,6 +4,9 @@ from flask import Flask, render_template, request, jsonify
 from generate_embeddings import create_or_load_vector_store
 from generate_response import generate_response
 from config import RECAPTCHA_SECRET_KEY
+from db import get_db_connection
+from datetime import datetime
+import uuid
 import requests
 import json
 
@@ -22,7 +25,10 @@ def chat():
         user_prompt = data.get("prompt") # get user_prompt from JSON data
         user_verified = data.get("user_verified", False) # get user_verified from JSON data
         recaptcha_response = data.get("recaptcha_response") # get recaptcha_response from JSON data
-        
+
+        device = request.user_agent.platform or "unknown" # detect device type (desktop, mobile, etc.) for the PostgreSQL database
+        user_id = request.remote_addr # sets the user_id to the IP address of the user making the request for the PostgreSQL database
+
         # At this point, user is not verified
         if not user_verified: 
             print("User not verified.")
@@ -50,6 +56,17 @@ def chat():
 
         logger.info(f"User Prompt: {user_prompt}")
         logger.info(f"API Response: {response}")
+
+        # Log to PostgreSQL database:
+        conn = get_db_connection() # establish a database connection
+        cur = conn.cursor() # create a cursor object to execute SQL commands; it’s an object that lets you execute SQL commands (queries, updates, etc) on the database.
+        cur.execute("""
+            INSERT INTO chat_logs (user_id, prompt, response, device)
+            VALUES (%s, %s, %s, %s);
+        """, (user_id, user_prompt, response, device)) # prepare and execute the SQL insert statement; the SQL query is an INSERT INTO statement, meaning you’re adding a new row into the chat_logs table in the database. chat_logs is the table where you’re storing user data, like prompts and responses. The columns you're inserting data into are: user_id, prompt, response, and device. The values (%s, %s, %s, %s) are placeholders, and they will be replaced by the values inside the tuple (user_id, user_prompt, response, device).
+        conn.commit() # commit the transaction (save the changes). If you don’t call commit(), the new data will not be saved to the database.
+        cur.close() # close the cursor to free up resources; Closing the cursor releases any resources (memory) it was using.
+        conn.close() # close the connection to the database; This frees up any resources the connection was using.
 
         return jsonify({"response": response})
     
