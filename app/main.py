@@ -4,7 +4,8 @@ from flask import Flask, render_template, request, jsonify
 from generate_embeddings import create_or_load_vector_store
 from generate_response import generate_response
 from config import RECAPTCHA_SECRET_KEY
-from db import get_db_connection
+from db import SessionLocal, init_db
+from models import ChatLog
 from datetime import datetime
 import requests
 import json
@@ -58,15 +59,18 @@ def chat():
         logger.info(f"API Response: {response}")
 
         # Log to PostgreSQL database:
-        conn = get_db_connection() # establish a database connection
-        cur = conn.cursor() # create a cursor object to execute SQL commands; it’s an object that lets you execute SQL commands (queries, updates, etc) on the database.
-        cur.execute("""
-            INSERT INTO chat_logs (date, user_id, device, prompt, response)
-            VALUES (%s, %s, %s, %s, %s);
-        """, (date, user_id, device, user_prompt, response)) # prepare and execute the SQL insert statement; the SQL query is an INSERT INTO statement, meaning you’re adding a new row into the chat_logs table in the database. chat_logs is the table where you’re storing user data, like prompts and responses. The columns you're inserting data into are: user_id, prompt, response, and device. The values (%s, %s, %s, %s) are placeholders, and they will be replaced by the values inside the tuple (user_id, user_prompt, response, device).
-        conn.commit() # commit the transaction (save the changes). If you don’t call commit(), the new data will not be saved to the database.
-        cur.close() # close the cursor to free up resources; Closing the cursor releases any resources (memory) it was using.
-        conn.close() # close the connection to the database; This frees up any resources the connection was using.
+        db = SessionLocal()  # open DB session
+        # create a new chat log row
+        chat_log = ChatLog(
+            date=date,
+            user_id=user_id,
+            device=device,
+            prompt=user_prompt,
+            response=response
+        ) 
+        db.add(chat_log) # stage it
+        db.commit() # commit the transaction (save the changes), if you don’t call commit() then the new data will not be saved to the database
+        db.close() # close session, frees up any resources the session was using
 
         return jsonify({"response": response})
     
@@ -76,4 +80,5 @@ def chat():
         return jsonify({"response": "An error occurred."}), 500
 
 if __name__ == "__main__":
+    init_db() # create tables before starting the app (does NOT delete or drop existing tables, it only creates tables that do NOT already exist)
     app.run(debug=True)

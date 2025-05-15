@@ -9,6 +9,7 @@ langchain-community # maybe, for doc chunking
 pymupdf # maybe
 faiss-cpu # maybe
 psycopg2-binary # PostgreSQL adapter for Python (Render Database)
+sqlalchemy # ORM (Object-Relational Mapping) for PostgreSQL
 
 # Development dependencies
 # pytest
