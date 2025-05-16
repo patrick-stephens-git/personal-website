@@ -1,8 +1,7 @@
-from config import response_token_limit
+from config import DOC_PATH, VECTOR_STORE_PATH, OPENAI_API_KEY, response_token_limit
 from langchain_openai import ChatOpenAI
-from generate_embeddings import create_or_load_vector_store
+from services.generate_embeddings import create_or_load_vector_store
 from utils.logging_config import setup_logging
-from config import DOC_PATH, VECTOR_STORE_PATH, OPENAI_API_KEY
 
 logger = setup_logging() # setup logging
 
