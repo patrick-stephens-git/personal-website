@@ -1,8 +1,8 @@
 from utils.logging_config import setup_logging
 from config import DOC_PATH, VECTOR_STORE_PATH, OPENAI_API_KEY
 from flask import Flask, render_template, request, jsonify
-from generate_embeddings import create_or_load_vector_store
-from generate_response import generate_response
+from services.generate_embeddings import create_or_load_vector_store
+from services.generate_response import generate_response
 from config import RECAPTCHA_SECRET_KEY
 from db import SessionLocal, init_db
 from models import ChatLog
