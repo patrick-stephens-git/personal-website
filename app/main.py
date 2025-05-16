@@ -1,12 +1,12 @@
 from utils.logging_config import setup_logging
-from config import DOC_PATH, VECTOR_STORE_PATH, OPENAI_API_KEY, RECAPTCHA_SECRET_KEY
+from config import DOC_PATH, VECTOR_STORE_PATH, OPENAI_API_KEY
 from flask import Flask, render_template, request, jsonify
 from services.generate_embeddings import create_or_load_vector_store
 from services.generate_response import generate_response
+from services.recaptcha_service import verify_recaptcha
 from db import SessionLocal, init_db
 from models import ChatLog
 from datetime import datetime
-import requests
 import json
 
 app = Flask(__name__) # create Flask app
@@ -30,24 +30,11 @@ def chat():
         user_id = request.remote_addr # sets the user_id to the IP address of the user making the request for the PostgreSQL database
 
         # At this point, user is not verified
-        if not user_verified: 
+        if not user_verified:
             print("User not verified.")
-            # check if recaptcha_response is empty
-            if not recaptcha_response: # check if recaptcha_response is empty
-                return jsonify({"response": "reCAPTCHA verification required."}), 400 # return error message if recaptcha_response is empty
-            print("reCAPTCHA verification required.")
-            
-            # if user_verified is empty; verify reCAPTCHA response
-            recaptcha_verify_url = "https://www.google.com/recaptcha/api/siteverify"
-            recaptcha_payload = {
-                "secret": RECAPTCHA_SECRET_KEY,
-                "response": recaptcha_response
-            }
-            recaptcha_result = requests.post(recaptcha_verify_url, data=recaptcha_payload).json() # send POST request to reCAPTCHA API
-
+            recaptcha_result = verify_recaptcha(recaptcha_response)
             if not recaptcha_result.get("success"): # check if reCAPTCHA verification failed
                 return jsonify({"response": "reCAPTCHA verification failed."}), 400 # return error message if reCAPTCHA verification failed
-                
         # At this point, user is verified (you might want to store this in a session or database; for added security, consider implementing a session token system)
         if not user_prompt: # check if user_prompt is empty
             return jsonify({"response": "Please enter a message."}) # return error message if user_prompt is empty
