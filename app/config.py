@@ -6,7 +6,7 @@ DOC_PATH: str = "documents/source.pdf"
 VECTOR_STORE_PATH: str = "vector_store/faiss_index"
 
 # limits
-response_token_limit = 200
+response_token_limit: int = 200
 
 # Load the environment variables
 load_dotenv('.env')

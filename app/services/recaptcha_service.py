@@ -7,7 +7,7 @@ def verify_recaptcha(recaptcha_response): # verify Google reCAPTCHA response fro
         return False, jsonify({"response": "reCAPTCHA verification required."}), 400 # return error message if recaptcha_response is empty
 
     # if user_verified is empty; verify reCAPTCHA response
-    recaptcha_verify_url = "https://www.google.com/recaptcha/api/siteverify"
+    recaptcha_verify_url: str = "https://www.google.com/recaptcha/api/siteverify"
     recaptcha_payload = {
         "secret": RECAPTCHA_SECRET_KEY,
         "response": recaptcha_response
