@@ -2,7 +2,7 @@
 
 # Production dependencies
 python-dotenv
-gunicorn
+gunicorn # needed for Render deploy
 flask
 langchain_openai
 langchain-community # maybe, for doc chunking
