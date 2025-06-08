@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const ul_services = document.createElement('ul'); // create element: <ul></ul>
 
     const links_services = [
-        { text: 'SEO Consulting', url: '/services/seo-consulting.html', target: '_self' }
+        { text: 'SEO Consulting', url: 'https://patrickcstephens.com/services/seo-consulting.html', target: '_self' }
     ];
 
     links_services.forEach(link => {
@@ -40,8 +40,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const ul_posts = document.createElement('ul'); // create element: <ul></ul>
 
     const links_posts = [
-        { text: 'Product Strategy', url: '/posts/product-strategy.html', target: '_self' },
-        { text: 'Assumption Validation', url: '/posts/assumption-validation.html', target: '_self' }
+        { text: 'Product Strategy', url: 'https://patrickcstephens.com/posts/product-strategy.html', target: '_self' },
+        { text: 'Assumption Validation', url: 'https://patrickcstephens.com/posts/assumption-validation.html', target: '_self' }
     ];
 
     links_posts.forEach(link => {
