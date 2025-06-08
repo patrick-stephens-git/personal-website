@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const links = [
         { text: 'Home', url: 'https://patrickcstephens.com/', target: '_self' },
         { text: 'PatChat', url: 'https://chat.patrickcstephens.com/', target: '_self' },
-        { text: 'Posts', url: 'https://patrickcstephens.com/posts', target: '_self' },
+        // { text: 'Posts', url: 'https://patrickcstephens.com/posts', target: '_self' },
         { text: 'Contact', url: 'mailto:patrickcstephens@me.com?subject=Reaching%20out%20from%20patrickcstephens.com', target: '_self' } 
     ];
 
