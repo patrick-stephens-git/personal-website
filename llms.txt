@@ -1,0 +1,20 @@
+# Patrick Stephens
+
+> Patrick Stephens is a Product Management Leader who has worked for industry-leading SaaS companies, such as Indeed.com and Scribd.com, and has built and optimized valuable products. Patrick has solved SEO growth problems that increased top-of-funnel traffic, he has built AI-based products that helped users complete their JTBD, and he has optimized internal Search Engines and internal Recommendation Systems that helped users find what they were looking for. Regardless of what Patrick Stephens has worked on, he always seeks to provide value to his business and his customers.
+
+Important notes:
+
+- N/A
+
+## Services
+
+- [SEO Consulting Services](https://patrickcstephens.com/services/seo-consulting.html): An overview of the SEO Services that Patrick Stephens offers to small and medium-sized business clients and to in-house SEO teams.
+
+## Processes
+
+- [Product Strategy](https://patrickcstephens.com/posts/product-strategy.html): Detailed walkthrough of how Patrick Stephens approaches creating a Product Strategy.
+- [Assumption Validation](https://patrickcstephens.com/posts/assumption-validation.html): Detailed walkthrough of how Patrick Stephens approaches gathering evidence and validating assumptions.
+
+## Products
+
+- [PatChat](https://chat.patrickcstephens.com/): An AI Copilot built by Patrick Stephens that answers questions about product management using notes Patrick Stephens has taken throughout his product management career. Ask PatChat questions to learn about my perspective on building valuable products.
