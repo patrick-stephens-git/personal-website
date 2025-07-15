@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const ul_services = document.createElement('ul'); // create element: <ul></ul>
 
     const links_services = [
-        { text: 'SEO Team Training', url: 'https://patrickcstephens.com/services/seo-consulting.html', target: '_self' }
+        { text: 'SEO Team Training', url: 'https://patrickcstephens.com/services/seo-team-training.html', target: '_self' }
     ];
 
     links_services.forEach(link => {
