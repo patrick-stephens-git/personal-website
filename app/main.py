@@ -44,19 +44,26 @@ def chat():
         logger.info(f"User Prompt: {user_prompt}")
         logger.info(f"API Response: {response}")
 
-        # Log to PostgreSQL database:
-        db = SessionLocal()  # open DB session
-        # create a new chat log row
-        chat_log = ChatLog(
-            date=date,
-            user_id=user_id,
-            device=device,
-            prompt=user_prompt,
-            response=response
-        ) 
-        db.add(chat_log) # stage it
-        db.commit() # commit the transaction (save the changes), if you don’t call commit() then the new data will not be saved to the database
-        db.close() # close session, frees up any resources the session was using
+        # Log to PostgreSQL database (fail gracefully if database is unavailable)
+        try:
+            db = SessionLocal()  # open DB session
+            # create a new chat log row
+            chat_log = ChatLog(
+                date=date,
+                user_id=user_id,
+                device=device,
+                prompt=user_prompt,
+                response=response
+            ) 
+            db.add(chat_log) # stage it
+            db.commit() # commit the transaction (save the changes), if you don’t call commit() then the new data will not be saved to the database
+        except Exception as db_error:
+            logger.error(f"Database logging failed: {db_error}")
+        finally:
+            try:
+                db.close() # only close session if db was successfully created, frees up any resources the session was using
+            except:
+                pass # db may not have initialized if SessionLocal() failed, avoids crashing if db was never initialized
 
         return jsonify({"response": response})
     
