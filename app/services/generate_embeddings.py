@@ -1,7 +1,7 @@
 import os
 from config import DOC_PATH, VECTOR_STORE_PATH, OPENAI_API_KEY
 from langchain_community.document_loaders import PyMuPDFLoader
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
 from langchain_openai import OpenAIEmbeddings
 
