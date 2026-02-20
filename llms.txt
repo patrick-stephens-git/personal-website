@@ -6,10 +6,6 @@ Important notes:
 
 - N/A
 
-## Services
-
-- [SEO Consulting Services](https://patrickcstephens.com/services/seo-consulting.html): An overview of the SEO Services that Patrick Stephens offers to small and medium-sized business clients and to in-house SEO teams.
-
 ## Processes
 
 - [Product Strategy](https://patrickcstephens.com/posts/product-strategy.html): Detailed walkthrough of how Patrick Stephens approaches creating a Product Strategy.

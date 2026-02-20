@@ -1,6 +1,3 @@
-User-agent: *
-Disallow: /page-template.html
-
 User-agent: AdsBot-Google
 Disallow: /
 

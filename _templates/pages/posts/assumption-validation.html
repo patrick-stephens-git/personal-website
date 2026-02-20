@@ -1,39 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Assumption Validation | Patrick Stephens</title>
-    <link rel="stylesheet" href="/resources/styles/global.css">
-    <link href="https://patrickcstephens.com/posts/assumption-validation.html" rel="canonical">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <base href="/">
-
-    <!-- Head Elements: https://www.w3schools.com/html/html_head.asp -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8"> <!-- Define the character set used -->
-    <meta name="author" content="Patrick Stephens">
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-    
-
-</head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5GGZZMBHJP"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-5GGZZMBHJP');
-</script>
-<body>
-    <header>
-        <div class="global-nav-container" id="global-nav-container">
-        <!-- global-nav.js will execute here -->
-        </div>
-    </header>
-    <main>
-        <div class="main-content-container">
-            
+{% extends "base.html" %}
+{% block title %}Assumption Validation | Patrick Stephens{% endblock %}
+{% block canonical %}https://patrickcstephens.com/posts/assumption-validation.html{% endblock %}
+{% block extra_scripts %}<script src="/resources/js/global-feedback-request.js"></script>{% endblock %}
+{% block content %}
             <div class="content">
                 <h1>Assumption Validation</h1>
                 <p>Every assumption made when building products is a risk. Validate assumptions to build valuable products that <b>solve real problems</b>. Validate assumptions to build premium products that <b>target customers will pay for</b>.</p>
@@ -108,24 +77,4 @@
                     <!-- global-feedback-request.js will execute here -->
                 </div>
             </div>
-
-            <div class="responsive-main-content-sidebar-divider"></div>
-        </div>
-        <div class="global-sidebar-container" id="global-sidebar-container">
-            <!-- global-sidebar.js will execute here -->
-        </div>
-
-        <!-- Page Content Scripts -->
-        <script src="/resources/js/global-nav.js"></script>
-        <script src="/resources/js/global-sidebar.js"></script>
-        <script src="/resources/js/global-footer.js"></script>
-        <script src="/resources/js/global-feedback-request.js"></script>
-    </main>
-    <footer>
-        <div class="global-footer-container" id="global-footer-container">
-            <!-- global-footer.js will execute here -->
-        </div>
-    </footer>
-</div>
-</body>
-</html>
+{% endblock %}

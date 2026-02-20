@@ -1,39 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Patrick Stephens</title>
-    <link rel="stylesheet" href="/resources/styles/global.css">
-    <link href="https://patrickcstephens.com/" rel="canonical">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <base href="/">
-
-    <!-- Head Elements: https://www.w3schools.com/html/html_head.asp -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8"> <!-- Define the character set used -->
-    <meta name="author" content="Patrick Stephens">
-    <meta name="keywords" content="">
-    <meta name="description" content="Personal website for Patrick Stephens.">
-    
-
-</head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5GGZZMBHJP"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-5GGZZMBHJP');
-</script>
-<body>
-    <header>
-        <div class="global-nav-container" id="global-nav-container">
-        <!-- global-nav.js will execute here -->
-        </div>
-    </header>
-    <main>
-        <div class="main-content-container">
-            
+{% extends "base.html" %}
+{% block title %}Patrick Stephens{% endblock %}
+{% block canonical %}https://patrickcstephens.com/{% endblock %}
+{% block meta_description %}Personal website for Patrick Stephens.{% endblock %}
+{% block extra_scripts %}<script src="/resources/js/years-experience.js"></script>{% endblock %}
+{% block content %}
             <div class="about">
                 <h1>Hi, I'm Patrick Stephens</h1>
                 <img src="/resources/images/patrick-stephens.png" class="profile-image" alt="Patrick Stephens">
@@ -85,24 +55,4 @@
                 <!-- <p>I brainstormed ideas and hypothesized: "If I send myself flashcards throughout the day of words I struggle with then I will memorize vocabulary without devoting time to studying."</p> -->
                 <!-- <p>I created a Python script that imports words and how often I've looked them up from a <a href="https://docs.google.com/spreadsheets/d/1e4xSr0ZxLaeDICGxBgR4zbNmDhrN-Yl7Cy7b5e4lT0w/edit?usp=sharing" target="_blank" rel="nofollow">spreadsheet</a> I maintain into a dataframe. The script randomly selects 1 of the words, generates an example sentence using OpenAI's API, and emails me the flashcard. Additionally, cron jobs on my local machine run the script throughout the day. The flashcards have helped me memorize vocabulary I struggled with.</p> -->
             </div>
-
-            <div class="responsive-main-content-sidebar-divider"></div>
-        </div>
-        <div class="global-sidebar-container" id="global-sidebar-container">
-            <!-- global-sidebar.js will execute here -->
-        </div>
-
-        <!-- Page Content Scripts -->
-        <script src="/resources/js/global-nav.js"></script>
-        <script src="/resources/js/global-sidebar.js"></script>
-        <script src="/resources/js/global-footer.js"></script>
-        <script src="/resources/js/years-experience.js"></script>
-    </main>
-    <footer>
-        <div class="global-footer-container" id="global-footer-container">
-            <!-- global-footer.js will execute here -->
-        </div>
-    </footer>
-</div>
-</body>
-</html>
+{% endblock %}

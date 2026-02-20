@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     const links = [
-        { text: 'Home', url: '/', target: '_self' },
+        { text: 'Home', url: 'https://patrickcstephens.com/', target: '_self' },
         { text: 'PatChat', url: 'https://chat.patrickcstephens.com/', target: '_self' },
         // { text: 'Services', url: '/services', target: '_self' },
         // { text: 'Posts', url: '/posts', target: '_self' },
